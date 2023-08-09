@@ -93,7 +93,7 @@ const FirstUl = styled.ul`
     height: 100%;
 `;
 
-const FirstLi = styled.li`
+const FirstLi = styled(({ isClickable, ...rest }) => <li {...rest} />)`
     display: flex;
     align-items: center;
     height: 100%;
