@@ -82,6 +82,11 @@ const GlobalStyle = createGlobalStyle`
         -webkit-border-radius: 0;
         -moz-border-radius: 0;
     }
+
+    #App {
+        position: relative;
+        min-height: 100vh;
+    }
 `;
 
 export default GlobalStyle;
