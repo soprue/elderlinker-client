@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+import magnifier from "../../assets/images/icons/icon-magnifier.png";
+
 function FloatingButton() {
     return (
         <FloatingWrap>
-            <FloatingImage
-                src="https://kr.object.ncloudstorage.com/elderlinker/icons/icon-magnifier.png"
-                alt="magnifier"
-            />
+            <FloatingImage src={magnifier} alt="magnifier" />
             <p>돋보기</p>
         </FloatingWrap>
     );
