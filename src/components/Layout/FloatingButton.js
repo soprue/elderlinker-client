@@ -43,7 +43,7 @@ function FloatingButton() {
 export default FloatingButton;
 
 const ButtonWrap = styled.div`
-    position: absolute;
+    position: fixed;
     bottom: 100px;
     right: 40px;
     z-index: 1;
