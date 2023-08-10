@@ -44,7 +44,8 @@ const Intro = styled.div`
     width: 100%;
     height: 660px;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main.png");
-    background-size: contain;
+    background-size: cover;
+    background-position: center center;
 `;
 
 const Shortcut = styled.div`
