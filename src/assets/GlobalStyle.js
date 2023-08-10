@@ -23,10 +23,69 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 600;
         font-style: normal;
     }
-    
+
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-collapse: collapse;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        font-weight: 400;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        letter-spacing: 0;
+    }
+
+    html {
+        height: 100%;
+        width: 100%;
+        font-size: 62.5%;
+    }
+
     body {
+        height: 100%;
+        width: 100%;
         font-family: "SCDream";
         font-weight: 400;
+        overflow-x: hidden;
+        letter-spacing: 1px;
+        font-size: 1.6rem;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    label,
+    button,
+    a {
+        cursor: pointer;
+    }
+
+    input,
+    textarea {
+        outline: none;
+    }
+    input,
+    textarea,
+    button {
+        font-family: "SCDream";
+        font-size: 1.6rem;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+    }
+
+    #App {
+        position: relative;
+        min-height: 100vh;
     }
 `;
 
