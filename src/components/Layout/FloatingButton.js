@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { tertiaryColor } from "../../styles/colors";
 
 import { FaMinus, FaPlus } from "react-icons/fa";
 
@@ -55,7 +56,7 @@ const Button = styled.div`
     justify-content: center;
     width: 100px;
     height: 100px;
-    background-color: #ff735c;
+    background-color: ${tertiaryColor};
     border-radius: 50%;
     text-align: center;
     color: #fff;

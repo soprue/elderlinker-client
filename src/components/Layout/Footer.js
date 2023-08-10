@@ -20,6 +20,4 @@ const FooterWrap = styled.footer`
     background-color: #ededed;
     color: #a3a3a3;
     font-size: 1.4rem;
-    position: absolute;
-    bottom: 0;
 `;

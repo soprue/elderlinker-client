@@ -1,10 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 
+import fontLight from "../assets/fonts/SCDream3.otf";
 import fontRegular from "../assets/fonts/SCDream4.otf";
 import fontMedium from "../assets/fonts/SCDream5.otf";
 import fontBold from "../assets/fonts/SCDream8.otf";
 
 const GlobalStyle = createGlobalStyle`
+@font-face {
+    font-family: 'SCDream';
+    src: url(${fontLight}) format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
     @font-face {
         font-family: 'SCDream';
         src: url(${fontRegular}) format('opentype');
