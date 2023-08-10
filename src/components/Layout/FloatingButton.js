@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { tertiaryColor } from "../../styles/colors";
 
-import magnifier from "../../assets/images/icons/icon-magnifier.png";
-
 function FloatingButton() {
     return (
         <FloatingWrap>
-            <FloatingImage src={magnifier} alt="magnifier" />
+            <FloatingImage
+                src="https://kr.object.ncloudstorage.com/elderlinker/icons/icon-magnifier.png"
+                alt="magnifier"
+            />
             <p>돋보기</p>
         </FloatingWrap>
     );

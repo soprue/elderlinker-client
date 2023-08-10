@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { secondaryColor, tertiaryColor } from "../../styles/colors";
 
 import { useNavigation } from "../../hooks/navigation";
-import MainBackground from "../../assets/images/main.png";
 import ShortcutItem from "./shortcut-item.component";
 
 function Main() {
@@ -44,7 +43,7 @@ export default Main;
 const Intro = styled.div`
     width: 100%;
     height: 660px;
-    background-image: url(${MainBackground});
+    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main.png");
     background-size: contain;
 `;
 

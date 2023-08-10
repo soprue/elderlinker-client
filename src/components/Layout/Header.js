@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigation } from "../../hooks/navigation";
 
-import logo from "../../assets/images/logo-horizontal.png";
-
 function Header() {
     const {
         goToHome,
@@ -20,7 +18,11 @@ function Header() {
     return (
         <HeaderWrap>
             <LogoWrap>
-                <LogoImage src={logo} alt="logo" onClick={goToHome}></LogoImage>
+                <LogoImage
+                    src="https://kr.object.ncloudstorage.com/elderlinker/logo-horizontal.png"
+                    alt="logo"
+                    onClick={goToHome}
+                ></LogoImage>
             </LogoWrap>
             <NavWrap>
                 <FirstUl>

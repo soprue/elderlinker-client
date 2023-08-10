@@ -3,12 +3,6 @@ import styled from "styled-components";
 import { primaryColor } from "../../styles/colors";
 import { useNavigation } from "../../hooks/navigation";
 
-import IntroImg from "../../assets/images/icons/icon-intro.png";
-import SmartphoneImg from "../../assets/images/icons/icon-smartphone.png";
-import ComputerImg from "../../assets/images/icons/icon-computer.png";
-import QuizImg from "../../assets/images/icons/icon-quiz.png";
-import GymImg from "../../assets/images/icons/icon-video.png";
-
 function ShortcutItem({ title }) {
     const { goToIntro, goToComputer, goToSmartphone, goToQuiz, goToGym } =
         useNavigation();
@@ -16,27 +10,27 @@ function ShortcutItem({ title }) {
     const getShortcutDetails = (title) => {
         const details = {
             intro: {
-                src: IntroImg,
+                src: "https://kr.object.ncloudstorage.com/elderlinker/icons/icon-introduce.png",
                 displayTitle: "소개",
                 target: goToIntro,
             },
             smartphone: {
-                src: SmartphoneImg,
+                src: "https://kr.object.ncloudstorage.com/elderlinker/icons/icon-smartphone.png",
                 displayTitle: "스마트폰 사용법",
                 target: goToSmartphone,
             },
             computer: {
-                src: ComputerImg,
+                src: "https://kr.object.ncloudstorage.com/elderlinker/icons/icon-computer.png",
                 displayTitle: "컴퓨터 사용법",
                 target: goToComputer,
             },
             quiz: {
-                src: QuizImg,
+                src: "https://kr.object.ncloudstorage.com/elderlinker/icons/icon-quiz.png",
                 displayTitle: "노인 질환 퀴즈",
                 target: goToQuiz,
             },
             gym: {
-                src: GymImg,
+                src: "https://kr.object.ncloudstorage.com/elderlinker/icons/icon-video.png",
                 displayTitle: "체조 영상",
                 target: goToGym,
             },
