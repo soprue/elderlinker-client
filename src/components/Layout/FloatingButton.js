@@ -27,7 +27,7 @@ const FloatingWrap = styled.div`
     color: #fff;
     font-size: 1.5rem;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     bottom: 100px;
     right: 40px;
     z-index: 1;
