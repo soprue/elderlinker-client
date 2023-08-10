@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { tertiaryColor } from "../../styles/colors";
 
 import magnifier from "../../assets/images/icons/icon-magnifier.png";
 
@@ -21,7 +22,7 @@ const FloatingWrap = styled.div`
     align-items: center;
     width: 130px;
     height: 130px;
-    background-color: #ff735c;
+    background-color: ${tertiaryColor};
     border-radius: 50%;
     text-align: center;
     color: #fff;
