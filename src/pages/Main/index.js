@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { secondaryColor, tertiaryColor } from "../../styles/colors";
 
+import { useNavigation } from "../../hooks/navigation";
 import MainBackground from "../../assets/images/main.png";
+import ShortcutItem from "./shortcut-item.component";
 
 function Main() {
+    const { goToIntro } = useNavigation();
+
     return (
         <>
             <Intro>
@@ -15,14 +20,20 @@ function Main() {
                         <TitleName> ‘에더링커’</TitleName>
                     </Title>
                     <Description>
-                        컴퓨터 사용법, 스마트폰 사용법, 질병에 관한 정보 등을
-                        습득할 수 있습니다.
+                        컴퓨터 사용법, 스마트폰 사용법, 노인 질환에 관한 정보
+                        등을 습득할 수 있습니다.
                     </Description>
-                    <StartButton>시작하기</StartButton>
+                    <StartButton onClick={goToIntro}>시작하기</StartButton>
                 </Wrap>
             </Intro>
             <Shortcut>
-                <Wrap></Wrap>
+                <Wrap>
+                    <ShortcutItem title="intro" />
+                    <ShortcutItem title="smartphone" />
+                    <ShortcutItem title="computer" />
+                    <ShortcutItem title="quiz" />
+                    <ShortcutItem title="gym" />
+                </Wrap>
             </Shortcut>
         </>
     );
@@ -53,12 +64,17 @@ const Wrap = styled.div`
         flex-direction: column;
         justify-content: center;
     }
+
+    ${Shortcut} > & {
+        justify-content: space-between;
+        align-items: center;
+    }
 `;
 
 const Title = styled.p`
     font-size: 5.4rem;
     font-weight: 600;
-    color: #ff735c;
+    color: ${tertiaryColor};
 `;
 const TitleName = styled.span`
     font-weight: 600;
@@ -77,7 +93,7 @@ const StartButton = styled.button`
     font-size: 2.7rem;
     font-weight: 500;
     color: #fff;
-    background-color: #60988f;
+    background-color: ${secondaryColor};
     border-radius: 10px;
     padding: 10px 25px;
 `;
