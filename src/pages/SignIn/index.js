@@ -1,40 +1,69 @@
 import React from "react";
-import styled from "styled-components";
-import { textColor, secondaryColor } from "../../styles/colors";
+import { useForm, Controller } from "react-hook-form";
 
+import styled, { keyframes, css } from "styled-components";
+import { textColor, secondaryColor, tertiaryColor } from "../../styles/colors";
 import { MdEmail } from "react-icons/md";
 import { FaKey } from "react-icons/fa";
 
 function SignIn() {
+    const {
+        handleSubmit,
+        control,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+    };
+
     return (
         <SignWrap>
             <BackTop></BackTop>
             <BackBottom>
-                <SignFormWrap>
+                <SignFormWrap onSubmit={handleSubmit(onSubmit)}>
                     <Title>로그인</Title>
                     <InputWrap>
                         <InputName>아이디</InputName>
-                        <InputBox>
+                        <InputBox hasError={errors.id}>
                             <MdEmail color="#555" size={20} />
-                            <Input
-                                type="text"
-                                id=""
-                                placeholder="example"
-                            ></Input>
+                            <Controller
+                                as={Input}
+                                name="id"
+                                control={control}
+                                defaultValue=""
+                                rules={{ required: "아이디는 필수입니다." }}
+                                render={({ field }) => (
+                                    <Input
+                                        type="text"
+                                        placeholder="EXAMPLE"
+                                        {...field}
+                                    />
+                                )}
+                            />
                         </InputBox>
                     </InputWrap>
                     <InputWrap>
                         <InputName>비밀번호</InputName>
-                        <InputBox>
+                        <InputBox hasError={errors.password}>
                             <FaKey color="#555" size={20} />
-                            <Input
-                                type="password"
-                                id=""
-                                placeholder="password"
-                            ></Input>
+                            <Controller
+                                as={Input}
+                                name="password"
+                                control={control}
+                                defaultValue=""
+                                rules={{ required: "비밀번호는 필수입니다." }}
+                                render={({ field }) => (
+                                    <Input
+                                        type="password"
+                                        placeholder="PASSWORD"
+                                        {...field}
+                                    />
+                                )}
+                            />
                         </InputBox>
                     </InputWrap>
-                    <SubmitButton>로그인</SubmitButton>
+                    <SubmitButton type="submit">로그인</SubmitButton>
                 </SignFormWrap>
             </BackBottom>
         </SignWrap>
@@ -98,20 +127,39 @@ const InputName = styled.p`
     margin-bottom: 5px;
 `;
 
+const shake = keyframes`
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-10px); }
+    20% { transform: translateX(10px); }
+    30% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    50% { transform: translateX(0); }
+    100% { transform: translateX(0); }
+`;
+
+const shakeAnimation = css`
+    ${shake} 0.6s cubic-bezier(.36,.07,.19,.97) both
+`;
+
 const InputBox = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
     height: 60px;
-    border: 1px solid #eee;
-    border-radius: 10px;
     padding: 20px 30px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    border-color: ${(props) => (props.hasError ? tertiaryColor : "#eee")};
+    animation: ${(props) => (props.hasError ? shakeAnimation : "none")};
+    box-shadow: ${(props) =>
+        props.hasError ? "0 0 10px rgba(255, 115, 92, .2)" : "none"};
 `;
 
 const Input = styled.input`
     height: 100%;
     margin-left: 20px;
     color: ${textColor};
+    font-size: 1.5rem;
     font-weight: 400;
 
     &::placeholder {
