@@ -25,7 +25,7 @@ function SignIn() {
                     <Title>로그인</Title>
                     <InputWrap>
                         <InputName>아이디</InputName>
-                        <InputBox hasError={errors.id}>
+                        <InputBox $hasError={errors.id}>
                             <MdEmail color="#555" size={20} />
                             <Controller
                                 as={Input}
@@ -45,7 +45,7 @@ function SignIn() {
                     </InputWrap>
                     <InputWrap>
                         <InputName>비밀번호</InputName>
-                        <InputBox hasError={errors.password}>
+                        <InputBox $hasError={errors.password}>
                             <FaKey color="#555" size={20} />
                             <Controller
                                 as={Input}
@@ -149,10 +149,10 @@ const InputBox = styled.div`
     padding: 20px 30px;
     border-radius: 10px;
     border: 1px solid #eee;
-    border-color: ${(props) => (props.hasError ? tertiaryColor : "#eee")};
-    animation: ${(props) => (props.hasError ? shakeAnimation : "none")};
+    border-color: ${(props) => (props.$hasError ? tertiaryColor : "#eee")};
+    animation: ${(props) => (props.$hasError ? shakeAnimation : "none")};
     box-shadow: ${(props) =>
-        props.hasError ? "0 0 10px rgba(255, 115, 92, .2)" : "none"};
+        props.$hasError ? "0 0 10px rgba(255, 115, 92, .2)" : "none"};
 `;
 
 const Input = styled.input`
