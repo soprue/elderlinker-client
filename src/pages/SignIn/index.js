@@ -94,6 +94,7 @@ const BackBottom = styled.div`
     background-size: 100% calc(100% - 580px), 100% auto;
     background-position: center top, center bottom;
     background-repeat: no-repeat;
+    padding-bottom: 120px;
 `;
 
 const SignFormWrap = styled.form`
@@ -109,6 +110,7 @@ const Title = styled.p`
     font-size: 3.6rem;
     font-weight: 500;
     color: ${textColor};
+    margin-bottom: 20px;
 `;
 
 const InputWrap = styled.div`
