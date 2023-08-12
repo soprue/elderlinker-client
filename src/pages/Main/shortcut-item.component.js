@@ -69,10 +69,15 @@ const Box = styled.div`
     background-color: #fff;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.3s;
 
     &:first-of-type {
         color: #fff;
         background-color: ${primaryColor};
+    }
+
+    &:hover {
+        opacity: 0.7;
     }
 `;
 
