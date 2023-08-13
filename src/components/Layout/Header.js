@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import { useNavigation } from "../../hooks/navigation";
+import styled from "styled-components";
+import { media } from "../../styles/mixin";
 
 function Header() {
     const {
@@ -68,6 +69,11 @@ const HeaderWrap = styled.header`
     justify-content: space-between;
     height: 90px;
     padding: 0 40px;
+
+    ${media.tablet`
+        height: 80px;
+        padding: 0 30px;
+    `}
 `;
 
 const LogoWrap = styled.div`
@@ -79,6 +85,10 @@ const LogoWrap = styled.div`
 const LogoImage = styled.img`
     height: 40px;
     cursor: pointer;
+
+    ${media.tablet`
+        height: 30px;
+    `}
 `;
 
 const NavWrap = styled.nav`
@@ -100,6 +110,10 @@ const FirstLi = styled(({ isClickable, ...rest }) => <li {...rest} />)`
     position: relative;
     padding: 0 30px;
     cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
+
+    ${media.tablet`
+        padding: 0 15px;
+    `}
 `;
 
 const Divider = styled.div`
@@ -109,6 +123,10 @@ const Divider = styled.div`
     background-color: #000;
     border-radius: 50%;
     margin: 0 10px;
+
+    ${media.tablet`
+        margin: 0 5px;
+    `}
 `;
 
 const SecondUl = styled.ul`
@@ -127,11 +145,19 @@ const SecondUl = styled.ul`
         opacity: 1;
         transform: translate(-50%, 0px);
     }
+
+    ${media.tablet`
+        width: 200%;
+    `}
 `;
 
 const SecondLi = styled.li`
     padding: 15px 0;
     cursor: pointer;
+
+    ${media.tablet`
+        padding: 10px 0;
+    `}
 `;
 
 const ButtonWrap = styled.div`
@@ -147,4 +173,10 @@ const SignButton = styled.button`
     &:last-of-type {
         margin-left: 20px;
     }
+
+    ${media.tablet`
+        &:last-of-type {
+            margin-left: 10px;
+        }
+    `}
 `;

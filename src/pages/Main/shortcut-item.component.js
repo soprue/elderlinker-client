@@ -1,7 +1,8 @@
 import React from "react";
+import { useNavigation } from "../../hooks/navigation";
 import styled from "styled-components";
 import { primaryColor } from "../../styles/colors";
-import { useNavigation } from "../../hooks/navigation";
+import { media } from "../../styles/mixin";
 
 function ShortcutItem({ title }) {
     const { goToIntro, goToComputer, goToSmartphone, goToQuiz, goToGym } =
@@ -79,6 +80,15 @@ const Box = styled.div`
     &:hover {
         opacity: 0.7;
     }
+
+    ${media.tablet`
+        width: calc(50% - 10px);
+        margin-bottom: 10px;
+
+        &:first-of-type {
+            display: none;
+        }
+    `}
 `;
 
 const Image = styled.img``;

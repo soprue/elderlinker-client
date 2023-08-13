@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { tertiaryColor } from "../../styles/colors";
+import { media } from "../../styles/mixin";
 
 import { FaMinus, FaPlus } from "react-icons/fa";
 
@@ -47,6 +48,10 @@ const ButtonWrap = styled.div`
     bottom: 100px;
     right: 40px;
     z-index: 1;
+
+    ${media.tablet`
+        display: none;
+    `}
 `;
 
 const Button = styled.div`
