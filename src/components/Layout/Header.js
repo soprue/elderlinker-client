@@ -175,7 +175,7 @@ const LogoImage = styled.img`
     `}
 
     ${media.mobile`
-        height: 20px;
+        height: 23px;
     `}
 `;
 
@@ -301,6 +301,7 @@ const HamburgerMenu = styled.div`
     transform: translateX(100%);
     transition: transform 0.5s;
     padding: 20px;
+    z-index: 1000;
 
     ${(props) => props.$isOpen && `transform: translateX(0%);`}
 `;

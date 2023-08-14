@@ -89,12 +89,23 @@ const Box = styled.div`
             display: none;
         }
     `}
+
+    ${media.mobile`
+        width: 100%;
+        height: 150px;
+        margin-bottom: 10px;
+    `}
 `;
 
 const Image = styled.img``;
 
 const Title = styled.p`
     margin: 20px 0;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+        margin: 10px 0;
+    `}
 `;
 
 const Bar = styled.div`
@@ -106,4 +117,9 @@ const Bar = styled.div`
     ${Box}:first-of-type > & {
         background-color: #fff;
     }
+
+    ${media.mobile`
+        width: 50px;
+        height: 3px;
+    `}
 `;

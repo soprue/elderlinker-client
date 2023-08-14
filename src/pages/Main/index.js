@@ -52,6 +52,11 @@ const Intro = styled.div`
         height: 600px;
         background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-origin.png");
     `}
+
+    ${media.mobile`
+        height: 300px;
+        margin-top: 50px;
+    `}
 `;
 
 const Shortcut = styled.div`
@@ -62,6 +67,11 @@ const Shortcut = styled.div`
     ${media.tablet`
         height: auto;
         padding: 30px 0 20px 0;
+    `}
+
+    ${media.mobile`
+        height: auto;
+        padding: 20px 0 10px 0;
     `}
 `;
 
@@ -90,6 +100,12 @@ const Wrap = styled.div`
             padding: 0 30px;
         }
     `}
+
+    ${media.mobile`
+        ${Shortcut} > & {
+            padding: 0 20px;
+        }
+    `}
 `;
 
 const Title = styled.p`
@@ -100,6 +116,11 @@ const Title = styled.p`
     ${media.tablet`
         font-size: 5rem;
         margin-bottom: 10px
+    `}
+
+    ${media.mobile`
+        font-size: 2.5rem;
+        margin-bottom: 5px;
     `}
 `;
 
@@ -113,6 +134,12 @@ const Description = styled.p`
     font-weight: 500;
     color: #40546d;
     margin-bottom: 50px;
+    padding: 0 20px;
+
+    ${media.mobile`
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+    `}
 `;
 
 const StartButton = styled.button`
@@ -128,5 +155,10 @@ const StartButton = styled.button`
         width: 250px;
         font-size: 2.2rem;
         margin: 0 auto;
+    `}
+
+    ${media.mobile`
+        width: 160px;
+        font-size: 1.4rem;
     `}
 `;
