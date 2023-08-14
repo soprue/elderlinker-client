@@ -3,6 +3,8 @@ import { useForm, Controller } from "react-hook-form";
 
 import styled, { keyframes, css } from "styled-components";
 import { textColor, secondaryColor, tertiaryColor } from "../../styles/colors";
+import { media } from "../../styles/mixin";
+
 import { MdEmail } from "react-icons/md";
 import { FaKey } from "react-icons/fa";
 
@@ -79,6 +81,7 @@ const SignWrap = styled.div`
 const BackTop = styled.div`
     width: 100%;
     height: 120px;
+    background-color: #fff8ed;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/bg-top.png");
     background-size: 100%;
     background-position: center top;
@@ -95,6 +98,10 @@ const BackBottom = styled.div`
     background-position: center top, center bottom;
     background-repeat: no-repeat;
     padding-bottom: 120px;
+
+    ${media.tablet`
+        padding: 0 30px 120px 30px;
+    `}
 `;
 
 const SignFormWrap = styled.form`
@@ -104,6 +111,10 @@ const SignFormWrap = styled.form`
     margin: 0 auto;
     background-color: #fff;
     border-radius: 15px;
+
+    ${media.tablet`
+        width: 100%;
+    `}
 `;
 
 const Title = styled.p`
