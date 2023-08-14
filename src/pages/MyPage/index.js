@@ -145,6 +145,11 @@ const WrapName = styled.p`
     ${media.tablet`
         font-size: 2.2rem;
     `}
+
+    ${media.mobile`
+        font-size: 2rem;
+        margin-bottom: 15px;
+    `}
 `;
 
 const ProfileWrap = styled.div`
@@ -155,6 +160,11 @@ const ProfileWrap = styled.div`
         width: 100%;
         padding: 0 30px;
     `}
+
+    ${media.mobile`
+        margin-top: 80px;
+        padding: 0 20px;
+    `}
 `;
 
 const ProfileBox = styled.div`
@@ -162,12 +172,22 @@ const ProfileBox = styled.div`
     border: 1px solid #aaa;
     border-radius: 5px;
     padding: 30px;
+
+    ${media.mobile`
+        padding: 15px;
+    `}
 `;
 
 const ProfilePicture = styled.div`
     width: 120px;
     height: 120px;
     margin-right: 50px;
+
+    ${media.mobile`
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    `}
 `;
 
 const ProfilePictureImage = styled.div`
@@ -182,10 +202,18 @@ const ProfileInfo = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 120px;
+
+    ${media.mobile`
+        height: 80px;
+    `}
 `;
 
 const ProfileText = styled.p`
     font-size: 2rem;
+
+    ${media.mobile`
+        font-size: 1.6rem;
+    `}
 `;
 
 const ProfileName = styled.span``;
@@ -197,6 +225,11 @@ const ProfileButton = styled.button`
     border: 1px solid #aaa;
     border-radius: 10px;
     padding: 5px 0;
+
+    ${media.mobile`
+        width: 130px;
+        font-size: 1.2rem;
+    `}
 `;
 
 const BadgeWrap = styled.div`
@@ -207,6 +240,11 @@ const BadgeWrap = styled.div`
     padding: 60px 0 100px 0;
 
     ${media.tablet`
+        padding: 40px 0 60px 0;
+    `}
+
+    ${media.mobile`
+        margin: 40px 0;
         padding: 40px 0 60px 0;
     `}
 `;
@@ -222,6 +260,11 @@ const BadgeTitle = styled.span`
     ${media.tablet`
         font-size: 2.2rem;
     `}
+
+    ${media.mobile`
+        font-size: 1.8rem;
+        padding: 10px 30px;
+    `}
 `;
 
 const BadgeBoxWrap = styled.div`
@@ -236,6 +279,11 @@ const BadgeBoxWrap = styled.div`
         padding: 0 30px;
         margin: 50px auto 0 auto;
     `}
+
+    ${media.mobile`
+        padding: 0 20px;
+        margin: 40px auto 0 auto;
+    `}
 `;
 
 const BadgeBox = styled.div`
@@ -249,6 +297,11 @@ const BadgeBox = styled.div`
         width: 150px;
         height: 150px;
     `}
+
+    ${media.mobile`
+        width: 80px;
+        height: 80px;
+    `}
 `;
 
 const EditWrap = styled.div`
@@ -258,6 +311,12 @@ const EditWrap = styled.div`
     ${media.tablet`
         width: 100%;
         padding: 0 30px;
+        margin: 0 auto 70px auto;
+    `}
+
+    ${media.mobile`
+        padding: 0 20px;
+        margin: 0 auto 50px auto;
     `}
 `;
 
@@ -271,6 +330,10 @@ const EditTable = styled.div`
     flex-direction: column;
     width: 100%;
     border-top: 2px solid #ccc;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+    `}
 `;
 
 const EditTr = styled.div`
@@ -295,12 +358,27 @@ const EditTd = styled.div`
         width: calc(100% - 180px);
         padding-left: 40px;
     }
+
+    ${media.mobile`
+        &:first-of-type {
+            width: 100px;
+        }
+
+        &:last-of-type {
+            width: calc(100% - 100px);
+            padding-left: 20px;
+        }
+    `}
 `;
 
 const Input = styled.input`
     border: 1px solid #aaa;
     border-radius: 5px;
     padding: 0 10px;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+    `}
 `;
 
 const SubmitButton = styled.button`
@@ -309,4 +387,9 @@ const SubmitButton = styled.button`
     border-radius: 10px;
     margin-top: 30px;
     padding: 10px 20px;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+        padding: 10px 15px;
+    `}
 `;
