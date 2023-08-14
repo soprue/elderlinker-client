@@ -76,6 +76,11 @@ export default SignIn;
 
 const SignWrap = styled.div`
     width: 100%;
+
+    ${media.tablet`
+        position: relative;
+        min-height: calc(100vh - 80px - 80px);
+    `}
 `;
 
 const BackTop = styled.div`
@@ -100,6 +105,7 @@ const BackBottom = styled.div`
     padding-bottom: 120px;
 
     ${media.tablet`
+        min-height: calc(100vh - 80px - 80px - 120px);
         padding: 0 30px 120px 30px;
     `}
 `;
@@ -113,7 +119,11 @@ const SignFormWrap = styled.form`
     border-radius: 15px;
 
     ${media.tablet`
-        width: 100%;
+        width: calc(100% - 60px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     `}
 `;
 
@@ -122,6 +132,10 @@ const Title = styled.p`
     font-weight: 500;
     color: ${textColor};
     margin-bottom: 20px;
+
+    ${media.tablet`
+        font-size: 3rem;
+    `}
 `;
 
 const InputWrap = styled.div`
