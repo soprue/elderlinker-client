@@ -141,11 +141,20 @@ const WrapName = styled.p`
     font-size: 2.4rem;
     color: ${textColor};
     margin-bottom: 25px;
+
+    ${media.tablet`
+        font-size: 2.2rem;
+    `}
 `;
 
 const ProfileWrap = styled.div`
     width: 1280px;
     margin: 50px auto 0 auto;
+
+    ${media.tablet`
+        width: 100%;
+        padding: 0 30px;
+    `}
 `;
 
 const ProfileBox = styled.div`
@@ -196,6 +205,10 @@ const BadgeWrap = styled.div`
     text-align: center;
     margin: 50px 0;
     padding: 60px 0 100px 0;
+
+    ${media.tablet`
+        padding: 40px 0 60px 0;
+    `}
 `;
 
 const BadgeTitle = styled.span`
@@ -205,6 +218,10 @@ const BadgeTitle = styled.span`
     background-color: #e396a5;
     padding: 10px 40px;
     border-radius: 30px;
+
+    ${media.tablet`
+        font-size: 2.2rem;
+    `}
 `;
 
 const BadgeBoxWrap = styled.div`
@@ -213,6 +230,12 @@ const BadgeBoxWrap = styled.div`
     width: 1280px;
     margin: 70px auto 0 auto;
     padding: 0 50px;
+
+    ${media.tablet`
+        width: 100%;
+        padding: 0 30px;
+        margin: 50px auto 0 auto;
+    `}
 `;
 
 const BadgeBox = styled.div`
@@ -221,11 +244,21 @@ const BadgeBox = styled.div`
     border-radius: 50%;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/badge-default.png");
     background-size: cover;
+
+    ${media.tablet`
+        width: 150px;
+        height: 150px;
+    `}
 `;
 
 const EditWrap = styled.div`
     width: 1280px;
     margin: 0 auto 80px auto;
+
+    ${media.tablet`
+        width: 100%;
+        padding: 0 30px;
+    `}
 `;
 
 const EditForm = styled.form`
