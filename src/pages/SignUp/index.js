@@ -129,8 +129,12 @@ const SignWrap = styled.div`
     width: 100%;
 
     ${media.tablet`
-        position: relative;
         min-height: calc(100vh - 80px - 80px);
+    `}
+
+    ${media.mobile`
+        margin-top: 50px;
+        min-height: calc(100vh - 50px - 50px);
     `}
 `;
 
@@ -142,6 +146,10 @@ const BackTop = styled.div`
     background-size: 100%;
     background-position: center top;
     background-repeat: no-repeat;
+
+    ${media.mobile`
+        height: 80px;
+    `}
 `;
 
 const BackBottom = styled.div`
@@ -158,6 +166,11 @@ const BackBottom = styled.div`
     ${media.tablet`
         min-height: calc(100vh - 80px - 80px - 120px);
         padding: 0 30px 120px 30px;
+    `}
+
+    ${media.mobile`
+        min-height: calc(100vh - 50px - 50px - 80px);
+        padding: 0 20px 80px 20px;
     `}
 `;
 
@@ -176,6 +189,13 @@ const SignFormWrap = styled.form`
         left: 50%;
         transform: translate(-50%, -50%);
     `}
+
+    ${media.mobile`
+        width: calc(100% - 40px);
+        padding: 60px 20px;
+        position: unset;
+        transform: unset;
+    `}
 `;
 
 const Title = styled.p`
@@ -187,6 +207,10 @@ const Title = styled.p`
     ${media.tablet`
         font-size: 3rem;
     `}
+
+    ${media.mobile`
+        font-size: 2.5rem;
+    `}
 `;
 
 const InputWrap = styled.div`
@@ -197,12 +221,20 @@ const InputWrap = styled.div`
     & + & {
         margin-top: 20px;
     }
+
+    ${media.mobile`
+        width: 100%;
+    `}
 `;
 
 const InputName = styled.p`
     color: ${textColor};
     font-weight: 500;
     margin-bottom: 5px;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+    `}
 `;
 
 const shake = keyframes`
@@ -231,6 +263,11 @@ const InputBox = styled.div`
     animation: ${(props) => (props.$hasError ? shakeAnimation : "none")};
     box-shadow: ${(props) =>
         props.$hasError ? "0 0 10px rgba(255, 115, 92, .2)" : "none"};
+
+    ${media.mobile`
+        height: 50px;
+        padding: 0px 30px;
+    `}
 `;
 
 const Input = styled.input`
@@ -243,6 +280,10 @@ const Input = styled.input`
     &::placeholder {
         color: #ccc;
     }
+
+    ${media.mobile`
+        font-size: 1.3rem;
+    `}
 `;
 
 const SubmitButton = styled.button`
@@ -252,4 +293,10 @@ const SubmitButton = styled.button`
     background-color: ${secondaryColor};
     border-radius: 10px;
     margin-top: 50px;
+
+    ${media.mobile`
+        width: 100%;
+        height: 50px;
+        margin-top: 40px;
+    `}
 `;

@@ -293,17 +293,16 @@ const HamburgerIcon = styled.div`
 const HamburgerMenu = styled.div`
     position: fixed;
     top: 50px;
-    right: 0;
+    right: -100%;
     width: 100%;
     height: calc(100% - 50px);
     background: #fff;
     overflow-y: hidden;
-    transform: translateX(100%);
-    transition: transform 0.5s;
+    transition: right 0.5s;
     padding: 20px;
-    z-index: 1000;
+    z-index: 9999;
 
-    ${(props) => props.$isOpen && `transform: translateX(0%);`}
+    ${(props) => props.$isOpen && `right: 0;`}
 `;
 
 const HamburgerNavWrap = styled.nav``;
