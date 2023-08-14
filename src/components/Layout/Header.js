@@ -23,11 +23,13 @@ function Header() {
         goToGym,
     } = useNavigation();
 
+    const [currentPage, setCurrentPage] = useState(null);
     const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-    const handleNavigation = (navigationFunction) => {
+    const handleNavigation = (navigationFunction, pageName) => {
         navigationFunction();
         setIsHamburgerOpen(false);
+        setCurrentPage(pageName);
     };
 
     return (
@@ -36,40 +38,77 @@ function Header() {
                 <LogoImage
                     src="https://kr.object.ncloudstorage.com/elderlinker/logo-horizontal.png"
                     alt="logo"
-                    onClick={goToHome}
+                    onClick={() => handleNavigation(goToHome, "home")}
                 ></LogoImage>
             </LogoWrap>
             <NavWrap>
                 <FirstUl>
-                    <FirstLi onClick={goToIntro} isClickable={true}>
+                    <FirstLi
+                        onClick={() => handleNavigation(goToIntro, "intro")}
+                        isClickable={true}
+                        isActive={currentPage === "intro"}
+                    >
                         소개
                     </FirstLi>
                     <Divider />
-                    <FirstLi isClickable={false}>
+                    <FirstLi
+                        isClickable={false}
+                        isActive={currentPage === "edu"}
+                    >
                         교육
                         <SecondUl>
-                            <SecondLi onClick={goToComputer}>
+                            <SecondLi
+                                onClick={() =>
+                                    handleNavigation(goToComputer, "edu")
+                                }
+                            >
                                 컴퓨터 교육
                             </SecondLi>
-                            <SecondLi onClick={goToSmartphone}>
+                            <SecondLi
+                                onClick={() =>
+                                    handleNavigation(goToSmartphone, "edu")
+                                }
+                            >
                                 스마트폰 교육
                             </SecondLi>
-                            <SecondLi onClick={goToQuiz}>질병 퀴즈</SecondLi>
+                            <SecondLi
+                                onClick={() =>
+                                    handleNavigation(goToQuiz, "edu")
+                                }
+                            >
+                                질병 퀴즈
+                            </SecondLi>
                         </SecondUl>
                     </FirstLi>
                     <Divider />
-                    <FirstLi isClickable={true} onClick={goToGym}>
+                    <FirstLi
+                        isClickable={true}
+                        onClick={() => handleNavigation(goToGym, "gym")}
+                        isActive={currentPage === "gym"}
+                    >
                         체조 영상
                     </FirstLi>
                     <Divider />
-                    <FirstLi isClickable={true} onClick={goToMypage}>
+                    <FirstLi
+                        isClickable={true}
+                        onClick={() => handleNavigation(goToMypage, "mypage")}
+                        isActive={currentPage === "mypage"}
+                    >
                         마이페이지
                     </FirstLi>
                 </FirstUl>
             </NavWrap>
             <ButtonWrap>
-                <SignButton onClick={goToSignIn}>로그인</SignButton>
-                <SignButton onClick={goToSignUp}>회원가입</SignButton>
+                <SignButton
+                    onClick={() => handleNavigation(goToSignIn, "signin")}
+                >
+                    로그인
+                </SignButton>
+                <SignButton
+                    onClick={() => handleNavigation(goToSignUp, "signup")}
+                >
+                    회원가입
+                </SignButton>
                 {/* <SignButton>로그아웃</SignButton> */}
             </ButtonWrap>
 
@@ -195,13 +234,33 @@ const FirstUl = styled.ul`
     height: 100%;
 `;
 
-const FirstLi = styled(({ isClickable, ...rest }) => <li {...rest} />)`
+const FirstLi = styled(({ isClickable, isActive, ...rest }) => (
+    <li {...rest} />
+))`
     display: flex;
     align-items: center;
     height: 100%;
     position: relative;
     padding: 0 30px;
     cursor: ${({ isClickable }) => (isClickable ? "pointer" : "default")};
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: ${primaryColor};
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        ${({ isActive }) =>
+            isActive &&
+            `
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        `}
+    }
 
     ${media.tablet`
         padding: 0 15px;
