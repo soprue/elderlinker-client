@@ -215,7 +215,7 @@ const InputBox = styled.div`
 
     ${media.mobile`
         height: 50px;
-        padding: 0px 30px;
+        padding: 0px 20px;
     `}
 `;
 
