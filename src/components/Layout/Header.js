@@ -24,6 +24,7 @@ function Header() {
             action: navigation.goToSmartphone,
         },
         "/quiz": { name: "edu", action: navigation.goToQuiz },
+        "/quiz/detail": { name: "edu", action: navigation.goToQuizDetail },
         "/gym": { name: "gym", action: navigation.goToGym },
         "/mypage": { name: "mypage", action: navigation.goToMypage },
         "/signin": { name: "signin", action: navigation.goToSignIn },
