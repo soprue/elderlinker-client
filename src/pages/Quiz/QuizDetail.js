@@ -111,6 +111,16 @@ const QuizContainer = styled.div`
     width: 100%;
     height: calc(100vh - 90px - 130px);
     background-color: #f3fbff;
+
+    ${media.tablet`
+        height: calc(100vh - 80px - 80px);
+    `}
+
+    ${media.mobile`
+        height: calc(100vh - 50px - 50px);
+        margin-top: 50px;
+        padding: 0 20px;
+    `}
 `;
 
 const CurrentQuestionNumber = styled.p`
@@ -120,18 +130,33 @@ const CurrentQuestionNumber = styled.p`
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 20px;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    `}
 `;
 
 const Question = styled.h2`
     font-size: 2rem;
     color: #40546d;
     margin-bottom: 20px;
+
+    ${media.mobile`
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    `}
 `;
 
 const Options = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    ${media.mobile`
+        width: 100%;
+        gap: 10px;
+    `}
 `;
 
 const Option = styled.label`
@@ -144,6 +169,11 @@ const Option = styled.label`
     padding: 15px 20px;
     border-radius: 20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 1px 10px;
+
+    ${media.mobile`
+        width: 100%;
+        font-size: 1.4rem;
+    `}
 `;
 
 const OptionInput = styled.input`
@@ -158,6 +188,10 @@ const CheckAnswerButton = styled.button`
     border-radius: 20px;
     cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
     opacity: ${(props) => (props.disabled ? "0.6" : "1")};
+
+    ${media.mobile`
+        font-size: 1.2rem;
+    `}
 `;
 
 const Modal = styled.div`
@@ -179,6 +213,11 @@ const ModalContent = styled.div`
     padding: 30px 50px;
     text-align: center;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+    ${media.mobile`
+        font-size: 1.6rem;
+        padding: 20px 35px;
+    `}
 `;
 
 const NextButton = styled.button`
@@ -190,6 +229,11 @@ const NextButton = styled.button`
     padding: 15px 20px;
     margin-top: 30px;
     cursor: pointer;
+
+    ${media.mobile`
+        font-size: 1.2rem;
+        margin-top: 20px;
+    `}
 `;
 
 const ResultText = styled.p`

@@ -29,6 +29,20 @@ const MainWrap = styled.div`
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-quiz.png");
     background-size: cover;
     background-position: left center;
+
+    ${media.tablet`
+        height: calc(100vh - 80px - 80px);
+        background-size: initial;
+        background-repeat: no-repeat;
+        background-color: #f3fbff;
+        background-position: bottom left;
+    `}
+
+    ${media.mobile`
+        height: calc(100vh - 50px - 50px);
+        background-size: 250%;
+        margin-top: 50px;
+    `}
 `;
 
 const Main = styled.div`
@@ -39,6 +53,16 @@ const Main = styled.div`
     width: 1280px;
     height: 100%;
     margin: 0 auto;
+
+    ${media.tablet`
+        width: 100%;
+        justify-content: flex-start;
+        padding-top: 150px;
+    `}
+
+    ${media.mobile`
+        padding-top: 100px;
+    `}
 `;
 
 const Text = styled.div`
@@ -46,6 +70,15 @@ const Text = styled.div`
     font-size: 5.4rem;
     font-weight: 600;
     color: #4c8aac;
+
+    ${media.tablet`
+        width: 100%;
+        text-align: center;
+    `}
+
+    ${media.mobile`
+        font-size: 3.8rem;
+    `}
 `;
 
 const Description = styled.p`
@@ -53,6 +86,11 @@ const Description = styled.p`
     font-weight: 500;
     color: #40546d;
     margin: 10px 0 30px 0;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+        margin: 5px 0 20px 0;
+    `}
 `;
 
 const StartButton = styled.button`
@@ -63,4 +101,8 @@ const StartButton = styled.button`
     padding: 10px 30px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    ${media.mobile`
+        font-size: 1.6rem;
+    `}
 `;
