@@ -35,6 +35,10 @@ export function useNavigation() {
         navigate("/quiz");
     };
 
+    const goToQuizDetail = () => {
+        navigate("/quiz/detail");
+    };
+
     const goToGym = () => {
         navigate("/gym");
     };
@@ -48,6 +52,7 @@ export function useNavigation() {
         goToComputer,
         goToSmartphone,
         goToQuiz,
+        goToQuizDetail,
         goToGym,
     };
 }
