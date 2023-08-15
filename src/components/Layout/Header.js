@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigation } from "../../hooks/navigation";
 import styled from "styled-components";
 import { primaryColor } from "../../styles/colors";
@@ -11,25 +11,36 @@ import { RiComputerLine } from "react-icons/ri";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 
 function Header() {
-    const {
-        goToHome,
-        goToSignIn,
-        goToSignUp,
-        goToMypage,
-        goToIntro,
-        goToComputer,
-        goToSmartphone,
-        goToQuiz,
-        goToGym,
-    } = useNavigation();
-
+    const navigation = useNavigation();
     const [currentPage, setCurrentPage] = useState(null);
     const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
-    const handleNavigation = (navigationFunction, pageName) => {
-        navigationFunction();
-        setIsHamburgerOpen(false);
-        setCurrentPage(pageName);
+    const routesMap = {
+        "/": { name: "home", action: navigation.goToHome },
+        "/intro": { name: "intro", action: navigation.goToIntro },
+        "/computer": { name: "edu", action: navigation.goToComputer },
+        "/smartphone": {
+            name: "edu",
+            action: navigation.goToSmartphone,
+        },
+        "/quiz": { name: "edu", action: navigation.goToQuiz },
+        "/gym": { name: "gym", action: navigation.goToGym },
+        "/mypage": { name: "mypage", action: navigation.goToMypage },
+        "/signin": { name: "signin", action: navigation.goToSignIn },
+        "/signup": { name: "signup", action: navigation.goToSignUp },
+    };
+
+    useEffect(() => {
+        setCurrentPage(routesMap[window.location.pathname]?.name || null);
+    }, []);
+
+    const handleNavigation = (path) => {
+        const route = routesMap[path];
+        if (route) {
+            route.action();
+            setIsHamburgerOpen(false);
+            setCurrentPage(route.name);
+        }
     };
 
     return (
@@ -38,13 +49,13 @@ function Header() {
                 <LogoImage
                     src="https://kr.object.ncloudstorage.com/elderlinker/logo-horizontal.png"
                     alt="logo"
-                    onClick={() => handleNavigation(goToHome, "home")}
+                    onClick={() => handleNavigation("/")}
                 ></LogoImage>
             </LogoWrap>
             <NavWrap>
                 <FirstUl>
                     <FirstLi
-                        onClick={() => handleNavigation(goToIntro, "intro")}
+                        onClick={() => handleNavigation("/intro")}
                         isClickable={true}
                         isActive={currentPage === "intro"}
                     >
@@ -58,24 +69,16 @@ function Header() {
                         교육
                         <SecondUl>
                             <SecondLi
-                                onClick={() =>
-                                    handleNavigation(goToComputer, "edu")
-                                }
+                                onClick={() => handleNavigation("/computer")}
                             >
                                 컴퓨터 교육
                             </SecondLi>
                             <SecondLi
-                                onClick={() =>
-                                    handleNavigation(goToSmartphone, "edu")
-                                }
+                                onClick={() => handleNavigation("/smartphone")}
                             >
                                 스마트폰 교육
                             </SecondLi>
-                            <SecondLi
-                                onClick={() =>
-                                    handleNavigation(goToQuiz, "edu")
-                                }
-                            >
+                            <SecondLi onClick={() => handleNavigation("/quiz")}>
                                 질병 퀴즈
                             </SecondLi>
                         </SecondUl>
@@ -83,7 +86,7 @@ function Header() {
                     <Divider />
                     <FirstLi
                         isClickable={true}
-                        onClick={() => handleNavigation(goToGym, "gym")}
+                        onClick={() => handleNavigation("/gym")}
                         isActive={currentPage === "gym"}
                     >
                         체조 영상
@@ -91,7 +94,7 @@ function Header() {
                     <Divider />
                     <FirstLi
                         isClickable={true}
-                        onClick={() => handleNavigation(goToMypage, "mypage")}
+                        onClick={() => handleNavigation("/mypage")}
                         isActive={currentPage === "mypage"}
                     >
                         마이페이지
@@ -99,14 +102,10 @@ function Header() {
                 </FirstUl>
             </NavWrap>
             <ButtonWrap>
-                <SignButton
-                    onClick={() => handleNavigation(goToSignIn, "signin")}
-                >
+                <SignButton onClick={() => handleNavigation("/signin")}>
                     로그인
                 </SignButton>
-                <SignButton
-                    onClick={() => handleNavigation(goToSignUp, "signup")}
-                >
+                <SignButton onClick={() => handleNavigation("/signup")}>
                     회원가입
                 </SignButton>
                 {/* <SignButton>로그아웃</SignButton> */}
@@ -117,37 +116,37 @@ function Header() {
                     <HamburgerNavWrap>
                         <HamburgerNavUl>
                             <HamburgerNavLi
-                                onClick={() => handleNavigation(goToIntro)}
+                                onClick={() => handleNavigation("/intro")}
                             >
                                 <BiEdit />
                                 소개
                             </HamburgerNavLi>
                             <HamburgerNavLi
-                                onClick={() => handleNavigation(goToComputer)}
+                                onClick={() => handleNavigation("/computer")}
                             >
                                 <RiComputerLine />
                                 컴퓨터 교육
                             </HamburgerNavLi>
                             <HamburgerNavLi
-                                onClick={() => handleNavigation(goToSmartphone)}
+                                onClick={() => handleNavigation("/smartphone")}
                             >
                                 <BsPhone />
                                 스마트폰 교육
                             </HamburgerNavLi>
                             <HamburgerNavLi
-                                onClick={() => handleNavigation(goToQuiz)}
+                                onClick={() => handleNavigation("/quiz")}
                             >
                                 <BiHelpCircle />
                                 질병 퀴즈
                             </HamburgerNavLi>
                             <HamburgerNavLi
-                                onClick={() => handleNavigation(goToGym)}
+                                onClick={() => handleNavigation("/gym")}
                             >
                                 <AiOutlinePlayCircle />
                                 체조 영상
                             </HamburgerNavLi>
                             <HamburgerNavLi
-                                onClick={() => handleNavigation(goToMypage)}
+                                onClick={() => handleNavigation("/mypage")}
                             >
                                 <BiUserCircle />
                                 마이페이지
@@ -156,12 +155,12 @@ function Header() {
                     </HamburgerNavWrap>
                     <HamburgerButtonWrap>
                         <HamburgerButton
-                            onClick={() => handleNavigation(goToSignIn)}
+                            onClick={() => handleNavigation("/signin")}
                         >
                             로그인
                         </HamburgerButton>
                         <HamburgerButton
-                            onClick={() => handleNavigation(goToSignUp)}
+                            onClick={() => handleNavigation("/signup")}
                         >
                             회원가입
                         </HamburgerButton>
@@ -260,6 +259,13 @@ const FirstLi = styled(({ isClickable, isActive, ...rest }) => (
             transform: scaleX(1);
             transform-origin: bottom left;
         `}
+    }
+
+    &:not(:nth-of-type(2)):hover {
+        &::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
 
     ${media.tablet`
