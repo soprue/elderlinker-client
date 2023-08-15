@@ -9,6 +9,7 @@ import Quiz from "./pages/Quiz";
 import MyPage from "./pages/MyPage";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import QuizDetail from "./pages/Quiz/QuizDetail";
 
 const routes = () => {
     return (
@@ -20,6 +21,7 @@ const routes = () => {
                     <Route path="/computer" element={<Computer />} />
                     <Route path="/smartphone" element={<Smartphone />} />
                     <Route path="/quiz" element={<Quiz />} />
+                    <Route path="/quiz/detail" element={<QuizDetail />} />
                     <Route path="/gym" element={<Gym />} />
                     <Route path="/mypage" element={<MyPage />} />
                     <Route path="/signin" element={<SignIn />} />
