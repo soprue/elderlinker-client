@@ -127,6 +127,7 @@ export default SignUp;
 
 const SignWrap = styled.div`
     width: 100%;
+    min-height: calc(100vh - 90px - 130px);
 
     ${media.tablet`
         min-height: calc(100vh - 80px - 80px);
@@ -154,7 +155,7 @@ const BackTop = styled.div`
 
 const BackBottom = styled.div`
     width: 100%;
-    min-height: 590px;
+    min-height: calc(100vh - 90px - 130px - 120px);
     background-color: #fff8ed;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/bg-center.png"),
         url("https://kr.object.ncloudstorage.com/elderlinker/bg-bottom.png");
