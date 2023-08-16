@@ -25,29 +25,6 @@ function MyPage() {
 
     return (
         <>
-            <ProfileWrap>
-                <WrapName>회원 정보</WrapName>
-                <ProfileBox>
-                    <ProfilePicture>
-                        <ProfilePictureImage></ProfilePictureImage>
-                    </ProfilePicture>
-                    <ProfileInfo>
-                        <ProfileText>
-                            <ProfileName>김상아</ProfileName> 님, 반갑습니다!
-                        </ProfileText>
-                        <ProfileButton>프로필 사진 변경하기</ProfileButton>
-                    </ProfileInfo>
-                </ProfileBox>
-            </ProfileWrap>
-            <BadgeWrap>
-                <BadgeTitle>마이 뱃지</BadgeTitle>
-                <BadgeBoxWrap>
-                    <BadgeBox></BadgeBox>
-                    <BadgeBox></BadgeBox>
-                    <BadgeBox></BadgeBox>
-                    <BadgeBox></BadgeBox>
-                </BadgeBoxWrap>
-            </BadgeWrap>
             <EditWrap>
                 <WrapName>회원 정보 수정</WrapName>
                 <EditForm onSubmit={handleSubmit(onSubmit)}>
@@ -131,6 +108,15 @@ function MyPage() {
                     <SubmitButton>수정하기</SubmitButton>
                 </EditForm>
             </EditWrap>
+            <BadgeWrap>
+                <BadgeTitle>마이 뱃지</BadgeTitle>
+                <BadgeBoxWrap>
+                    <BadgeBox></BadgeBox>
+                    <BadgeBox></BadgeBox>
+                    <BadgeBox></BadgeBox>
+                    <BadgeBox></BadgeBox>
+                </BadgeBoxWrap>
+            </BadgeWrap>
         </>
     );
 }
@@ -152,171 +138,19 @@ const WrapName = styled.p`
     `}
 `;
 
-const ProfileWrap = styled.div`
-    width: 1280px;
-    margin: 50px auto 0 auto;
-
-    ${media.tablet`
-        width: 100%;
-        padding: 0 30px;
-    `}
-
-    ${media.mobile`
-        margin-top: 80px;
-        padding: 0 20px;
-    `}
-`;
-
-const ProfileBox = styled.div`
-    display: flex;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    padding: 30px;
-
-    ${media.mobile`
-        padding: 15px;
-    `}
-`;
-
-const ProfilePicture = styled.div`
-    width: 120px;
-    height: 120px;
-    margin-right: 50px;
-
-    ${media.mobile`
-        width: 80px;
-        height: 80px;
-        margin-right: 20px;
-    `}
-`;
-
-const ProfilePictureImage = styled.div`
-    width: 100%;
-    height: 100%;
-    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/user-default.png");
-    background-size: cover;
-`;
-
-const ProfileInfo = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 120px;
-
-    ${media.mobile`
-        height: 80px;
-    `}
-`;
-
-const ProfileText = styled.p`
-    font-size: 2rem;
-
-    ${media.mobile`
-        font-size: 1.6rem;
-    `}
-`;
-
-const ProfileName = styled.span``;
-
-const ProfileButton = styled.button`
-    width: 160px;
-    font-size: 1.3rem;
-    background-color: transparent;
-    border: 1px solid #aaa;
-    border-radius: 10px;
-    padding: 5px 0;
-
-    ${media.mobile`
-        width: 130px;
-        font-size: 1.2rem;
-    `}
-`;
-
-const BadgeWrap = styled.div`
-    width: 100%;
-    background-color: #fffdf1;
-    text-align: center;
-    margin: 50px 0;
-    padding: 60px 0 100px 0;
-
-    ${media.tablet`
-        padding: 40px 0 60px 0;
-    `}
-
-    ${media.mobile`
-        margin: 40px 0;
-        padding: 40px 0 60px 0;
-    `}
-`;
-
-const BadgeTitle = styled.span`
-    color: #fff;
-    font-size: 2.6rem;
-    font-weight: 500;
-    background-color: #e396a5;
-    padding: 10px 40px;
-    border-radius: 30px;
-
-    ${media.tablet`
-        font-size: 2.2rem;
-    `}
-
-    ${media.mobile`
-        font-size: 1.8rem;
-        padding: 10px 30px;
-    `}
-`;
-
-const BadgeBoxWrap = styled.div`
-    display: flex;
-    justify-content: space-between;
-    width: 1280px;
-    margin: 70px auto 0 auto;
-    padding: 0 50px;
-
-    ${media.tablet`
-        width: 100%;
-        padding: 0 30px;
-        margin: 50px auto 0 auto;
-    `}
-
-    ${media.mobile`
-        padding: 0 20px;
-        margin: 40px auto 0 auto;
-    `}
-`;
-
-const BadgeBox = styled.div`
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/badge-default.png");
-    background-size: cover;
-
-    ${media.tablet`
-        width: 150px;
-        height: 150px;
-    `}
-
-    ${media.mobile`
-        width: 80px;
-        height: 80px;
-    `}
-`;
-
 const EditWrap = styled.div`
     width: 1280px;
-    margin: 0 auto 80px auto;
+    margin: 50px auto;
 
     ${media.tablet`
         width: 100%;
         padding: 0 30px;
-        margin: 0 auto 70px auto;
+        margin: 50px auto;
     `}
 
     ${media.mobile`
         padding: 0 20px;
-        margin: 0 auto 50px auto;
+        margin: 80px auto 50px auto;
     `}
 `;
 
@@ -391,5 +225,77 @@ const SubmitButton = styled.button`
     ${media.mobile`
         font-size: 1.4rem;
         padding: 10px 15px;
+    `}
+`;
+
+const BadgeWrap = styled.div`
+    width: 100%;
+    background-color: #fffdf1;
+    text-align: center;
+    margin: 30px 0 0 0;
+    padding: 60px 0 100px 0;
+
+    ${media.tablet`
+        padding: 40px 0 60px 0;
+    `}
+
+    ${media.mobile`
+        margin: 20px 0 0 0;
+        padding: 40px 0 60px 0;
+    `}
+`;
+
+const BadgeTitle = styled.span`
+    color: #fff;
+    font-size: 2.6rem;
+    font-weight: 500;
+    background-color: #e396a5;
+    padding: 10px 40px;
+    border-radius: 30px;
+
+    ${media.tablet`
+        font-size: 2.2rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.8rem;
+        padding: 10px 30px;
+    `}
+`;
+
+const BadgeBoxWrap = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    margin: 70px auto 0 auto;
+    padding: 0 50px;
+
+    ${media.tablet`
+        width: 100%;
+        padding: 0 30px;
+        margin: 50px auto 0 auto;
+    `}
+
+    ${media.mobile`
+        padding: 0 20px;
+        margin: 40px auto 0 auto;
+    `}
+`;
+
+const BadgeBox = styled.div`
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/badge-default.png");
+    background-size: cover;
+
+    ${media.tablet`
+        width: 150px;
+        height: 150px;
+    `}
+
+    ${media.mobile`
+        width: 80px;
+        height: 80px;
     `}
 `;
