@@ -39,17 +39,17 @@ export function useNavigation() {
         navigate("/gym");
     };
 
-    const goToSmartContnet1 = () => {
-        navigate("/smartphone/smartContnet1")
+    const goToSmartContent1 = () => {
+        navigate("/smartphone/smartContent1")
     };
-    const goToSmartContnet2 = () => {
-        navigate("/smartphone/smartContnet2")
+    const goToSmartContent2 = () => {
+        navigate("/smartphone/smartContent2")
     };
-    const goToSmartContnet3 = () => {
-        navigate("/smartphone/smartContnet3")
+    const goToSmartContent3 = () => {
+        navigate("/smartphone/smartContent3")
     };
-    const goToSmartContnet4 = () => {
-        navigate("/smartphone/smartContnet4")
+    const goToSmartContent4 = () => {
+        navigate("/smartphone/smartContent4")
     };
 
     return {
@@ -62,9 +62,9 @@ export function useNavigation() {
         goToSmartphone,
         goToQuiz,
         goToGym,
-        goToSmartContnet1,
-        goToSmartContnet2,
-        goToSmartContnet3,
-        goToSmartContnet4,
+        goToSmartContent1,
+        goToSmartContent2,
+        goToSmartContent3,
+        goToSmartContent4,
     };
 }
