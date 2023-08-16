@@ -39,6 +39,19 @@ export function useNavigation() {
         navigate("/gym");
     };
 
+    const goToSmartContnet1 = () => {
+        navigate("(/smartphone/smartContnet1")
+    };
+    const goToSmartContnet2 = () => {
+        navigate("/smartContnet2")
+    };
+    const goToSmartContnet3 = () => {
+        navigate("/smartContnet3")
+    };
+    const goToSmartContnet4 = () => {
+        navigate("/smartContnet4")
+    };
+
     return {
         goToHome,
         goToSignIn,
@@ -49,5 +62,9 @@ export function useNavigation() {
         goToSmartphone,
         goToQuiz,
         goToGym,
+        goToSmartContnet1,
+        goToSmartContnet2,
+        goToSmartContnet3,
+        goToSmartContnet4,
     };
 }

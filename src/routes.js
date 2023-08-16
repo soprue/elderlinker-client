@@ -9,6 +9,7 @@ import Quiz from "./pages/Quiz";
 import MyPage from "./pages/MyPage";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import SmartContent1 from "./pages/Smartphone/smartContent1.js";
 
 const routes = () => {
     return (
@@ -24,6 +25,7 @@ const routes = () => {
                     <Route path="/mypage" element={<MyPage />} />
                     <Route path="/signin" element={<SignIn />} />
                     <Route path="/signup" element={<SignUp />} />
+                    <Route path="/smartphone/smartContent1" element={<SmartContent1 />} />
                 </Route>
             </Routes>
         </BrowserRouter>
