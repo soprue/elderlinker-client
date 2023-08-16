@@ -219,3 +219,4 @@ const BadgeImage = styled.img`
         margin-bottom: 50px;
     `}
 `;
+
