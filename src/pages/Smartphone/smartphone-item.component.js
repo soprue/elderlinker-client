@@ -3,26 +3,26 @@ import styled from "styled-components";
 import { useNavigation } from "../../hooks/navigation";
 
 function SmartphoneItem({ title }) {
-    const { goToSmartContnet1, goToSmartContnet2, goToSmartContnet3, goToSmartContnet4 } =
+    const { goToSmartContent1, goToSmartContent2, goToSmartContent3, goToSmartContent4 } =
         useNavigation();
 
     const getShortcutDetails = (title) => {
         const details = {
             smartContent1: {
                 displayTitle: "문자보내기",
-                target: goToSmartContnet1,
+                target: goToSmartContent1,
             },
             smartContent2: {
                 displayTitle: "카카오톡 프로필 편집",
-                target: goToSmartContnet2,
+                target: goToSmartContent2,
             },
             smartContent3: {
                 displayTitle: "사진보내기",
-                target: goToSmartContnet3,
+                target: goToSmartContent3,
             },
             smartContent4: {
                 displayTitle: "동영상찍기",
-                target: goToSmartContnet4,
+                target: goToSmartContent4,
             },
         };
 
