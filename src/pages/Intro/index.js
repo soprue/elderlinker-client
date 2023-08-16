@@ -1,61 +1,119 @@
 import React from "react";
 import styled from "styled-components";
 
-function Gym() {
+function Intro() {
   return (
     <>
-      <Intro>
-        <Wrap>
-          <Title>
-            <br />
-            '국군도수체조'
-          </Title>
-          <Description>온몸을 풀어주는 맨손 체조</Description>
-        </Wrap>
-      </Intro>
-
       <Box>
-        <Wrap>
-          <br />
-          <br />
-          <br />
-          <br />
-          <TitleTop />
-          <TitleBox>
-            <Titlesub>[국군도수체조영상]</Titlesub>
-          </TitleBox>
-          <TitleBottom />
-        </Wrap>
+        <TitleItalic>
+          elderlinker
+          <Title>elderlinker</Title>
+        </TitleItalic>
       </Box>
+      <Smart></Smart>
+      <Computer></Computer>
+      <Quiz></Quiz>
+      <Gym></Gym>
+      <Circle></Circle>
+      <Circle></Circle>
+      <Circle></Circle>
+      <RoundedRectangle>
+        <MyBadge>마이 뱃지</MyBadge>
+      </RoundedRectangle>
+      <BadgeInfo>
+        위 과제들을 수행하면 마이페이지에서 마이뱃지를 얻으실 수 있습니다
+      </BadgeInfo>
+      <MyBadgeImg></MyBadgeImg>
     </>
   );
 }
-export default Gym;
+export default Intro;
 
 const Box = styled.div`
-  width: 100%;
-  height: 1002px;
-  background-color: #fbe4c4;
-`;
-
-const TitleBottom = styled.div`
-  width: 1272px;
-  height: 680px;
-  background-color: #dfdfdf;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-`;
-const TitleBox = styled.div`
-  width: 1272px;
-  height: 92px;
-  background-color: #1b2e35;
+  width: 1140px;
+  height: 658px;
+  background-color: #fffaf2;
   display: flex;
   justify-content: center;
   margin: auto;
 `;
 
-const Titlesub = styled.div`
+const TitleItalic = styled.h1`
+  font-size: 49px;
+  color: #f5e6e9;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+`;
+
+const Title = styled.h1`
+  font-size: 90px;
+  color: #cc435f;
+  display: flex;
+  justify-content: center;
+  margin-top: -45px;
+  position: absolute;
+`;
+
+const Smart = styled.div`
+  width: 571px;
+  height: 435px;
+  background-image: url("https://ifh.cc/g/htsaGh.png");
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 445px;
+`;
+
+const Computer = styled.div`
+  width: 571px;
+  height: 435px;
+  background-image: url("https://ifh.cc/g/9B29sP.png");
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1020px;
+`;
+
+const Quiz = styled.div`
+  width: 571px;
+  height: 435px;
+  background-image: url("https://ifh.cc/g/crc7SS.png");
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 445px;
+`;
+
+const Gym = styled.div`
+  width: 571px;
+  height: 435px;
+  background-image: url("https://ifh.cc/g/8zLraq.png");
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1020px;
+`;
+
+const Circle = styled.div`
+  width: 13px;
+  height: 13px;
+  background-color: #c9c9c9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+`;
+
+const RoundedRectangle = styled.div`
+  width: 192px;
+  height: 62px;
+  background-color: #e396a5;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 60px;
+`;
+
+const MyBadge = styled.div`
   font-size: 20pt;
   color: #ffffff;
   display: flex;
@@ -63,36 +121,21 @@ const Titlesub = styled.div`
   margin: auto;
 `;
 
-const TitleTop = styled.div`
-  width: 1272px;
-  height: 10px;
-  background-color: #ec7e85;
+const BadgeInfo = styled.div`
+  font-size: 18pt;
+  color: #222222;
   display: flex;
   justify-content: center;
   margin: auto;
+  margin-top: 40px;
 `;
 
-const Wrap = styled.div``;
-
-const Intro = styled.div`
-  width: 100%;
-  height: 950px;
-  background-image: url("https://ifh.cc/g/45nZs9.jpg");
-  background-size: cover;
-  background-position: center center;
-`;
-
-const Title = styled.h1`
-  color: #385a64;
-  font-weight: 500;
-  font-size: 60pt;
-  display: flex;
+const MyBadgeImg = styled.div`
+  width: 1147px;
+  height: 218px;
+  background-image: url("https://ifh.cc/g/ky7j26.png");
+  flex-direction: column;
   justify-content: center;
-`;
-
-const Description = styled.p`
-  color: #5d5d5d;
-  font-size: 30pt;
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  margin-top: 60px;
 `;
