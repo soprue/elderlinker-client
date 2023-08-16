@@ -68,6 +68,10 @@ const IntroWrap = styled.div`
     flex-direction: column;
     width: 1140px;
     margin: 0 auto;
+
+    ${media.tablet`
+        width: 100%;
+    `}
 `;
 
 const Service = styled.div``;
@@ -87,7 +91,15 @@ const ServiceText = styled.div`
     width: 50%;
     padding: 0 80px;
 
-    ${(props) => props.$pos && `align-items: end`}
+    ${media.tablet`
+        padding: 0 50px;
+    `}
+
+    ${media.mobile`
+        padding: 0 20px;
+    `}
+
+    ${(props) => props.$pos && `align-items: end; text-align: right;`}
 `;
 
 const ServiceName = styled.p`
@@ -95,12 +107,30 @@ const ServiceName = styled.p`
     font-weight: 600;
     color: #222;
     margin-bottom: 30px;
+
+    ${media.tablet`
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    `}
+
+    ${media.mobile`
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    `}
 `;
 
 const ServiceDesc = styled.p`
     font-size: 1.8rem;
     font-weight: 500;
     color: #222;
+
+    ${media.tablet`
+        font-size: 1.6rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.2rem;
+    `}
 `;
 
 const DotWrap = styled.div`
@@ -110,6 +140,15 @@ const DotWrap = styled.div`
     gap: 30px;
     width: 100%;
     margin: 80px 0;
+
+    ${media.tablet`
+        margin: 60px 0;
+    `}
+
+    ${media.mobile`
+        margin: 35px 0;
+        gap: 15px;
+    `}
 `;
 
 const Dot = styled.div`
@@ -117,6 +156,11 @@ const Dot = styled.div`
     height: 12px;
     border-radius: 50%;
     background-color: #c9c9c9;
+
+    ${media.mobile`
+        width: 8px;
+        height: 8px;
+    `}
 `;
 
 const BadgeWrap = styled.div`
@@ -135,13 +179,13 @@ const BadgeTitle = styled.span`
     border-radius: 30px;
 
     ${media.tablet`
-    font-size: 2.2rem;
-`}
+        font-size: 2.2rem;
+    `}
 
     ${media.mobile`
-    font-size: 1.8rem;
-    padding: 10px 30px;
-`}
+        font-size: 1.6rem;
+        padding: 8px 30px;
+    `}
 `;
 
 const BadgeDesc = styled.p`
@@ -149,9 +193,29 @@ const BadgeDesc = styled.p`
     font-weight: 500;
     color: #222;
     margin: 40px 0 80px 0;
+
+    ${media.tablet`
+        font-size: 1.6rem;
+        margin: 30px 0 60px 0;
+    `}
+
+    ${media.mobile`
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 0 20px;
+        margin: 20px 0 40px 0;
+    `}
 `;
 
 const BadgeImage = styled.img`
     width: 100%;
     margin-bottom: 150px;
+
+    ${media.tablet`
+        margin-bottom: 100px;
+    `}
+
+    ${media.mobile`
+        margin-bottom: 50px;
+    `}
 `;
