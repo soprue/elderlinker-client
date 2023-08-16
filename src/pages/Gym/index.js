@@ -105,11 +105,17 @@ const Video = styled.div`
     display: flex;
     justify-content: center;
     align-content: center;
+    width: 1272px;
+    margin: 0 auto;
 
     & > video {
         width: 100%;
         height: auto;
     }
+
+    ${media.tablet`
+        width: 100%;
+    `}
 `;
 
 const TitleBox = styled.div`
