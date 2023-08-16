@@ -52,6 +52,19 @@ export function useNavigation() {
         navigate("/smartphone/smartContent4")
     };
 
+    const goToComputerContent1 = () => {
+        navigate("/computer/computerContent1")
+    };
+    const goToComputerContent2 = () => {
+        navigate("/computer/computerContent2")
+    };
+    const goToComputerContent3 = () => {
+        navigate("/computer/computerContent3")
+    };
+    const goToComputerContent4 = () => {
+        navigate("/computer/computerContent4")
+    };
+
     return {
         goToHome,
         goToSignIn,
@@ -66,5 +79,9 @@ export function useNavigation() {
         goToSmartContent2,
         goToSmartContent3,
         goToSmartContent4,
+        goToComputerContent1,
+        goToComputerContent2,
+        goToComputerContent3,
+        goToComputerContent4,
     };
 }

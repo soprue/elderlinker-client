@@ -13,6 +13,10 @@ import SmartContent1 from "./pages/Smartphone/smartContent1.js";
 import SmartContent2 from "./pages/Smartphone/smartContent2.js";
 import SmartContent3 from "./pages/Smartphone/smartContent3.js";
 import SmartContent4 from "./pages/Smartphone/smartContent4.js";
+import ComputerContent1 from "./pages/Computer/computerContent1.js";
+import ComputerContent2 from "./pages/Computer/computerContent2.js";
+import ComputerContent3 from "./pages/Computer/computerContent3.js";
+import ComputerContent4 from "./pages/Computer/computerContent4.js";
 
 const routes = () => {
     return (
@@ -32,6 +36,10 @@ const routes = () => {
                     <Route path="/smartphone/smartContent2" element={<SmartContent2 />} />
                     <Route path="/smartphone/smartContent3" element={<SmartContent3 />} />
                     <Route path="/smartphone/smartContent4" element={<SmartContent4 />} />
+                    <Route path="/computer/computerContent1" element={<ComputerContent1 />} />
+                    <Route path="/computer/computerContent2" element={<ComputerContent2 />} />
+                    <Route path="/computer/computerContent3" element={<ComputerContent3 />} />
+                    <Route path="/computer/computerContent4" element={<ComputerContent4 />} />
                 </Route>
             </Routes>
         </BrowserRouter>
