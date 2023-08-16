@@ -24,7 +24,12 @@ function Gym() {
           <TitleBox>
             <Titlesub>[국군도수체조영상]</Titlesub>
           </TitleBox>
-          <TitleBottom />
+          <Video>
+            <video width='1272' height='1019' controls="controls">
+                <source src="https://kr.object.ncloudstorage.com/elderlinker/gym.mp4" type="video/mp4"/>
+            </video>
+          </Video>
+
         </Wrap>
       </Box>
     </>
@@ -34,18 +39,17 @@ export default Gym;
 
 const Box = styled.div`
   width: 100%;
-  height: 1002px;
+  height: 1300px;
   background-color: #fbe4c4;
 `;
 
-const TitleBottom = styled.div`
-  width: 1272px;
-  height: 680px;
-  background-color: #dfdfdf;
+
+const Video = styled.div`
   display: flex;
   justify-content: center;
-  margin: auto;
+  align-content: center;
 `;
+
 const TitleBox = styled.div`
   width: 1272px;
   height: 92px;
