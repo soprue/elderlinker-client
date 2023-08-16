@@ -40,16 +40,16 @@ export function useNavigation() {
     };
 
     const goToSmartContnet1 = () => {
-        navigate("(/smartphone/smartContnet1")
+        navigate("/smartphone/smartContnet1")
     };
     const goToSmartContnet2 = () => {
-        navigate("/smartContnet2")
+        navigate("/smartphone/smartContnet2")
     };
     const goToSmartContnet3 = () => {
-        navigate("/smartContnet3")
+        navigate("/smartphone/smartContnet3")
     };
     const goToSmartContnet4 = () => {
-        navigate("/smartContnet4")
+        navigate("/smartphone/smartContnet4")
     };
 
     return {
