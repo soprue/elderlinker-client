@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-//import {bannerTextColor, primaryColor} from "../../styles/colors";
+import { media } from "../../styles/mixin";
+
 import content1 from './image/메시지1.png';
 import content2 from './image/메시지2.png';
 import content3 from './image/메시지3.png';
@@ -51,10 +52,11 @@ const Image = styled.div`
     weight : 300px;
     background-image : url('/message1.png');
     background-size : cover;
+    margin: -100px 10px 30px 0;
 `;
 const Img = styled.img`
     width: 200px;
-    margin: -100px 10px 30px 0;
+    
 `;
 
 
@@ -74,6 +76,14 @@ const Intro = styled.div`
 const Content = styled.div`
     width: 100%;
     height: 660px;
+    ${media.tablet`
+        width: 100%;
+        height: 1000px; 
+    `}
+    ${media.mobile`
+        width: 100%;
+        height: 1200px; 
+    `}
 `;
 
 const Wrap = styled.div`
@@ -89,6 +99,22 @@ const Wrap = styled.div`
     ${Content} > & {
         align-items: center;
     }
+    ${media.tablet`
+        width: 100%; 
+        text-align: center;
+
+        ${Content} > & {
+            padding: 0 30px;
+            height: 1000px;
+        }
+    `}
+
+    ${media.mobile`
+        ${Content} > & {
+            padding: 0 20px;
+            height: 1000px;
+        }
+    `}
 `;
 
 const Title = styled.p`

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-//import {bannerTextColor, primaryColor} from "../../styles/colors";
+import { media } from "../../styles/mixin";
 import content1 from './image/프로필1.jpg';
 import content2 from './image/프로필2.jpg';
 import content3 from './image/프로필3.jpg';
@@ -107,6 +107,10 @@ const Wrap = styled.div`
     ${Content} > & {
         align-items: center;
     }
+    ${media.tablet`
+        width: 100%;
+        padding: 0 20px;
+    `}
 `;
 
 const Title = styled.p`
