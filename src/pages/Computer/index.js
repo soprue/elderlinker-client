@@ -51,7 +51,8 @@ const Intro = styled.div`
     height: 660px;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-computer.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+
     ${media.tablet`
     height: 600px;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-computer.png");
@@ -97,6 +98,7 @@ const Title = styled.p`
     font-size: 5.4rem;
     font-weight: 600;
     color: ${bannerTextColor};
+
     ${media.tablet`
         font-size: 5rem;
         margin-bottom: 10px
