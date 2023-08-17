@@ -1,47 +1,48 @@
 import React from "react";
 import styled from "styled-components";
-import { bannerTextColor, primaryColor } from "../../styles/colors";
+import {bannerTextColor, primaryColor} from "../../styles/colors";
 import { media } from "../../styles/mixin";
 
-import ComputerItem from "./computer-item.component";
+import ComputerItme from "./computer-item.component";
 
 function Computer() {
-    return (
-        <>
-            <Intro>
-                <Wrap>
-                    <Title>
-                        디지털 시대에 적응하기 위한
-                        <br />
-                        기본 지침, 컴퓨터 교육
-                    </Title>
-                    <Description>
-                        에더링크의 교육을 통해서 컴퓨터의 기본 기능을 알아보아요
-                    </Description>
-                </Wrap>
-            </Intro>
-            <Content>
-                <Wrap>
-                    <ContentTitle>강의</ContentTitle>
-                    <SearchBar>
-                        <Input type="text" placeholder="검색" />
-                        <SearchButton>검색</SearchButton>
-                    </SearchBar>
-                    <Separator />
-                    <Courses>
-                        <Checkbox type="checkbox" />
-                        <ComputerItem title="computerContent1" />
-                        <Checkbox type="checkbox" />
-                        <ComputerItem title="computerContent2" />
-                        <Checkbox type="checkbox" />
-                        <ComputerItem title="computerContent3" />
-                        <Checkbox type="checkbox" />
-                        <ComputerItem title="computerContent4" />
-                    </Courses>
-                </Wrap>
-            </Content>
-        </>
-    );
+    return (<>
+        <Intro>
+            <Wrap>
+                <Title>
+                    디지털 시대에 적응하기 위한
+                    <br />
+                    기본 지침, 컴퓨터 교육
+                </Title>
+                <Description>
+                    에더링크의 교육을 통해서 컴퓨터의 기본 기능을 알아보아요
+                </Description>
+            </Wrap>
+        </Intro>
+        <Content>
+            <Wrap>
+                <ContentTitle>
+                    강의
+                </ContentTitle>
+                <WrapSearch>
+                    <Input></Input>
+                    <Search>검색</Search>
+                </WrapSearch>
+                <Bar></Bar>
+
+                <Course>
+                    <StyledInput type="checkbox" />
+                    <ComputerItme title = "computerContent1"/>
+                    <StyledInput type="checkbox" />
+                    <ComputerItme title = "computerContent2"/>
+                    <StyledInput type="checkbox" />
+                    <ComputerItme title = "computerContent3"/>
+                    <StyledInput type="checkbox" />
+                    <ComputerItme title = "computerContent4"/>
+                </Course>
+            </Wrap>
+        </Content>
+    </>);
 }
 
 export default Computer;
@@ -51,7 +52,7 @@ const Intro = styled.div`
     height: 660px;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-computer.png");
     background-size: cover;
-    background-position: center;
+    background-position: center center;
 
     ${media.tablet`
     height: 600px;
@@ -66,13 +67,12 @@ const Intro = styled.div`
 
 const Content = styled.div`
     width: 100%;
-    min-height: 660px; /* Adjust this value as needed */
-    background-color: #fff;
-    padding-bottom: 50px; /* Adjust this value as needed */
+    height: 660px;
 `;
 
 const Wrap = styled.div`
     width: 1280px;
+    height: 100%;
     margin: 0 auto;
 
     ${Intro} > & {
@@ -98,15 +98,16 @@ const Title = styled.p`
     font-size: 5.4rem;
     font-weight: 600;
     color: ${bannerTextColor};
-
     ${media.tablet`
         font-size: 5rem;
         margin-bottom: 10px
+        text-align: center;
     `}
 
     ${media.mobile`
         font-size: 2.5rem;
         margin-bottom: 5px;
+        text-align: center;
     `}
 `;
 
@@ -115,70 +116,72 @@ const Description = styled.p`
     font-weight: 500;
     color: #40546d;
     margin-bottom: 50px;
+    ${media.mobile`
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        text-align: center;
+    `}
 `;
 
 const ContentTitle = styled.p`
+    padding-left: 20px;
     font-size: 2rem;
     font-weight: 500;
     cursor: default;
     float: left;
-    margin-bottom: 10px;
 `;
 
-const SearchBar = styled.div`
+const Bar = styled.div`
+    margin-bottom: 30px;
+    border-bottom: 3px solid black;
+`;
+
+const WrapSearch = styled.div`
+    padding-bottom: 20px;
     text-align: right;
-    margin-bottom: 20px;
 `;
 
 const Input = styled.input`
     border: 1px solid black;
-    padding: 5px;
-    width: 200px;
 `;
 
-const SearchButton = styled.button`
+const Search = styled.button`
     background-color: black;
     color: #fff;
+    display: inline;
     border: 1px solid black;
-    padding: 5px 10px;
-    cursor: pointer;
+    width:40px;
 
     ${media.tablet`
         margin-top: 10px;
     `}
 `;
 
-const Separator = styled.div`
-    margin-bottom: 20px;
-    border-bottom: 3px solid black;
-`;
+const StyledInput = styled.input`
+  appearance: none;
+  float: left;
+  display: inline;
+  margin-right: 10px;
+  border: 1.5px solid gainsboro;
+  border-radius: 1rem;
+  width: 2rem;
+  height: 2rem;
 
-const Courses = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  &:checked {
+    border-color: transparent;
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+    background-size: 100% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: ${primaryColor};
+  }
 
-    
-`;
-
-const Checkbox = styled.input`
-    appearance: none;
-    margin-right: 10px;
-    border: 1.5px solid gainsboro;
-    border-radius: 1rem;
-    width: 2rem;
-    height: 2rem;
-
-    &:checked {
-        border-color: transparent;
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
-        background-size: 100% 100%;
-        background-position: 50%;
-        background-repeat: no-repeat;
-        background-color: ${primaryColor};
-    }
-
-    ${media.tablet`
+  ${media.tablet`
         margin-right: 5px;
+        float: left;
     `}
+`;
+
+const Course = styled.div`
+
 `;
