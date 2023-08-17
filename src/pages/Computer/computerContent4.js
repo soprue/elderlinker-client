@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-//import {bannerTextColor, primaryColor} from "../../styles/colors";
-
+import { media } from "../../styles/mixin";
 
 function ComputerContent4() {
     return (
@@ -47,6 +46,9 @@ const Subcontent = styled.p`
     height: 50px;
     font-size: 2rem;
     font-weight: 300;
+    ${media.mobile`
+        font-size: 1.6rem;
+    `}
 `;
 
 const Intro = styled.div`
@@ -74,6 +76,10 @@ const Wrap = styled.div`
     ${Content} > & {
         align-items: center;
     }
+    ${media.tablet`
+        width: 100%;
+        padding: 0 20px;
+    `}
 `;
 
 const Title = styled.p`

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-
+import { media } from "../../styles/mixin";
 
 function ComputerContent1() {
     return (
@@ -88,12 +87,14 @@ function ComputerContent1() {
 
 export default ComputerContent1;
 
-
 const Subcontent = styled.p`
-    height: 50px;
     font-size: 2rem;
     font-weight: 300;
     margin: -120px 0 0 0;
+
+    ${media.mobile`
+        font-size: 1.6rem;
+    `}
 `;
 
 const Intro = styled.div`
@@ -106,7 +107,6 @@ const Intro = styled.div`
 const Content = styled.div`
     width: 100%;
     height: 700px;
-    
 `;
 
 const Wrap = styled.div`
@@ -122,6 +122,11 @@ const Wrap = styled.div`
     ${Content} > & {
         align-items: center;
     }
+
+    ${media.tablet`
+        width: 100%;
+        padding: 0 20px;
+    `}
 `;
 
 const Title = styled.p`
@@ -133,7 +138,6 @@ const Title = styled.p`
     padding-left: 20px;
     background-color: #C6EBFF;
 `;
-
 
 const ContentTitle = styled.p`
     padding-left: 20px;
@@ -163,5 +167,5 @@ const Search = styled.button`
     color: #fff;
     display: inline;
     border: 1px solid black;
-    width:40px;
+    width: 40px;
 `;
