@@ -106,7 +106,7 @@ const Intro = styled.div`
 
 const Content = styled.div`
     width: 100%;
-    height: 700px;
+    height: 900px;
 `;
 
 const Wrap = styled.div`
