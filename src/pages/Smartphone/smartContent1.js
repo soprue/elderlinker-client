@@ -52,11 +52,11 @@ const Image = styled.div`
     weight : 300px;
     background-image : url('/message1.png');
     background-size : cover;
-    margin: -100px 10px 30px 0;
+    
 `;
 const Img = styled.img`
     width: 200px;
-    
+    margin: 0 10px px 0;
 `;
 
 
@@ -68,7 +68,7 @@ const Subcontent = styled.p`
 
 const Intro = styled.div`
     width: 100%;
-    height: 300px;
+    height: 150px;
     background-size: cover;
     background-position: center center;
 `;

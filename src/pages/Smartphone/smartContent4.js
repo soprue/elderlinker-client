@@ -73,7 +73,7 @@ const ImgEnd = styled.div`
 `;
 
 const ImgStart = styled.div`
-    margin: -150px 0px 0px 0;
+    margin: 0 0px 0px 0;
 `;
 
 const Subcontent = styled.p`
@@ -84,7 +84,7 @@ const Subcontent = styled.p`
 
 const Intro = styled.div`
     width: 100%;
-    height: 300px;
+    height: 150px;
     background-size: cover;
     background-position: center center;
 `;
@@ -92,6 +92,14 @@ const Intro = styled.div`
 const Content = styled.div`
     width: 100%;
     height: 800px;
+    ${media.tablet`
+        width: 100%;
+        height: 1100px;
+    `}
+    ${media.mobile`
+        width: 100%;
+        height: 1500px; 
+    `}
 `;
 
 const Wrap = styled.div`

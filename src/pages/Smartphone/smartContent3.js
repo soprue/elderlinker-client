@@ -50,7 +50,7 @@ const Image = styled.div`
 `;
 const Img = styled.img`
     width: 200px;
-    margin: -100px 10px 30px 0;
+    margin: 0 10px 30px 0;
 `;
 
 
@@ -62,7 +62,7 @@ const Subcontent = styled.p`
 
 const Intro = styled.div`
     width: 100%;
-    height: 300px;
+    height: 150px;
     background-size: cover;
     background-position: center center;
 `;
@@ -70,6 +70,14 @@ const Intro = styled.div`
 const Content = styled.div`
     width: 100%;
     height: 660px;
+    ${media.tablet`
+        width: 100%;
+        height: 1000px; 
+    `}
+    ${media.mobile`
+        width: 100%;
+        height: 1200px; 
+    `}
 `;
 
 const Wrap = styled.div`
