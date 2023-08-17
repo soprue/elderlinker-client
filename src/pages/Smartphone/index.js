@@ -53,7 +53,7 @@ const Intro = styled.div`
     height: 660px;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-smartphone.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
 `;
 
 const Content = styled.div`

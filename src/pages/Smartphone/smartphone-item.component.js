@@ -9,11 +9,11 @@ function SmartphoneItem({ title }) {
     const getShortcutDetails = (title) => {
         const details = {
             smartContent1: {
-                displayTitle: "문자보내기",
+                displayTitle: "카카오톡보내기",
                 target: goToSmartContent1,
             },
             smartContent2: {
-                displayTitle: "카카오톡 프로필 편집",
+                displayTitle: "동영상 찍기",
                 target: goToSmartContent2,
             },
             smartContent3: {
@@ -21,7 +21,7 @@ function SmartphoneItem({ title }) {
                 target: goToSmartContent3,
             },
             smartContent4: {
-                displayTitle: "동영상찍기",
+                displayTitle: "카카오톡 프로필 편집",
                 target: goToSmartContent4,
             },
         };
