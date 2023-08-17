@@ -30,16 +30,16 @@ function Computer() {
                 </WrapSearch>
                 <Bar></Bar>
 
-                <Course>
-                    <StyledInput type="checkbox" />
-                    <ComputerItme title = "computerContent1"/>
-                    <StyledInput type="checkbox" />
-                    <ComputerItme title = "computerContent2"/>
-                    <StyledInput type="checkbox" />
-                    <ComputerItme title = "computerContent3"/>
-                    <StyledInput type="checkbox" />
-                    <ComputerItme title = "computerContent4"/>
-                </Course>
+                
+                <StyledInput type="checkbox" />
+                <ComputerItme title = "computerContent1"/>
+                <StyledInput type="checkbox" />
+                <ComputerItme title = "computerContent2"/>
+                <StyledInput type="checkbox" />
+                <ComputerItme title = "computerContent3"/>
+                <StyledInput type="checkbox" />
+                <ComputerItme title = "computerContent4"/>
+            
             </Wrap>
         </Content>
     </>);
@@ -178,10 +178,6 @@ const StyledInput = styled.input`
 
   ${media.tablet`
         margin-right: 5px;
-        float: left;
     `}
 `;
 
-const Course = styled.div`
-
-`;
