@@ -52,6 +52,15 @@ const Intro = styled.div`
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-computer.png");
     background-size: cover;
     background-position: center center;
+    ${media.tablet`
+    height: 600px;
+    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-computer.png");
+    `}
+
+    ${media.mobile`
+        height: 300px;
+        margin-top: 50px;
+    `}
 `;
 
 const Content = styled.div`
@@ -80,6 +89,7 @@ const Wrap = styled.div`
     ${media.tablet`
         width: 100%;
         padding: 0 20px;
+        text-align: center;
     `}
 `;
 
@@ -87,6 +97,15 @@ const Title = styled.p`
     font-size: 5.4rem;
     font-weight: 600;
     color: ${bannerTextColor};
+    ${media.tablet`
+        font-size: 5rem;
+        margin-bottom: 10px
+    `}
+
+    ${media.mobile`
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    `}
 `;
 
 const Description = styled.p`
