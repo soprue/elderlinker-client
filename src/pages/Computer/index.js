@@ -20,29 +20,30 @@ function Computer() {
             </Wrap>
         </Intro>
         <Content>
-            <Wrap>
-                <ContentTitle>
-                    강의
-                </ContentTitle>
-                <WrapSearch>
-                    <Input></Input>
-                    <Search>검색</Search>
-                </WrapSearch>
-                <Bar></Bar>
+                <Wrap>
+                    <ContentTitle>
+                        강의
+                    </ContentTitle>
+                    <WrapSearch>
+                        <Input></Input>
+                        <Search>검색</Search>
+                    </WrapSearch>
+                    <Bar></Bar>
 
-                
-                <StyledInput type="checkbox" />
-                <ComputerItme title = "computerContent1"/>
-                <StyledInput type="checkbox" />
-                <ComputerItme title = "computerContent2"/>
-                <StyledInput type="checkbox" />
-                <ComputerItme title = "computerContent3"/>
-                <StyledInput type="checkbox" />
-                <ComputerItme title = "computerContent4"/>
-            
-            </Wrap>
-        </Content>
-    </>);
+                    <Wrap>
+                        <StyledInput type="checkbox" />
+                        <ComputerItme title = "computerContent1"/>
+                        <StyledInput type="checkbox" />
+                        <ComputerItme title = "computerContent2"/>
+                        <StyledInput type="checkbox" />
+                        <ComputerItme title = "computerContent3"/>
+                        <StyledInput type="checkbox" />
+                        <ComputerItme title = "computerContent4"/>
+                    </Wrap>
+                </Wrap>
+            </Content>
+        </>
+    );
 }
 
 export default Computer;
@@ -52,7 +53,7 @@ const Intro = styled.div`
     height: 660px;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-computer.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
 
     ${media.tablet`
     height: 600px;
@@ -86,7 +87,6 @@ const Wrap = styled.div`
         padding-top: 150px;
         align-items: center;
     }
-
     ${media.tablet`
         width: 100%;
         padding: 0 20px;
@@ -151,7 +151,6 @@ const Search = styled.button`
     display: inline;
     border: 1px solid black;
     width:40px;
-
     ${media.tablet`
         margin-top: 10px;
     `}
@@ -160,7 +159,6 @@ const Search = styled.button`
 const StyledInput = styled.input`
   appearance: none;
   float: left;
-  display: inline;
   margin-right: 10px;
   border: 1.5px solid gainsboro;
   border-radius: 1rem;
@@ -178,6 +176,6 @@ const StyledInput = styled.input`
 
   ${media.tablet`
         margin-right: 5px;
+        float: left;
     `}
 `;
-
