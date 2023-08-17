@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigation } from "../../hooks/navigation";
+import { media } from "../../styles/mixin";
 
 function ComputerphoneItem({ title }) {
     const { goToComputerContent1, goToComputerContent2, goToComputerContent3, goToComputerContent4 } =
@@ -48,15 +49,23 @@ export default ComputerphoneItem;
 const Box = styled.div`
     justify-content: center;
     align-items: center;
-    width: 100%x;
+    width: 100%;
     height: 50px;
-`;
+    display: flex; /* Add this to make content centered horizontally */
+    
+    ${media.tablet`
+        padding: 0 20px;
+    `}
 
+    ${media.mobile`
+        padding: 0 10px;
+    `}
+`;
 
 const Title = styled.p`
     margin: 10px 0;
-    padding-left: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid black;
     cursor: pointer;
+    width: 100%; /* Ensure the title takes up the entire width */
 `;
