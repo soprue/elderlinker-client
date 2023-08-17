@@ -113,10 +113,6 @@ const Input = styled.input`
     border: 1px solid black;
     padding: 5px;
     width: 200px;
-
-    ${media.tablet`
-        width: 100%;
-    `}
 `;
 
 const SearchButton = styled.button`
@@ -141,9 +137,7 @@ const Courses = styled.div`
     flex-wrap: wrap;
     align-items: center;
 
-    ${media.tablet`
-        justify-content: center;
-    `}
+    
 `;
 
 const Checkbox = styled.input`
