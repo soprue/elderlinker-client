@@ -1,29 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../../styles/mixin";
-import content1 from './image/프로필1.jpg';
-import content2 from './image/프로필2.jpg';
-import content3 from './image/프로필3.jpg';
-import content4 from './image/프로필4.jpg';
-import content5 from './image/프로필5.jpg';
+import content1 from "./image/프로필1.jpg";
+import content2 from "./image/프로필2.jpg";
+import content3 from "./image/프로필3.jpg";
+import content4 from "./image/프로필4.jpg";
+import content5 from "./image/프로필5.jpg";
 
 function SmartContent4() {
     return (
         <>
             <Intro>
                 <Wrap>
-                    <ContentTitle>
-                        강의
-                    </ContentTitle>
+                    <ContentTitle>강의</ContentTitle>
                     <WrapSearch>
                         <Input></Input>
                         <Search>검색</Search>
                     </WrapSearch>
                     <Bar></Bar>
 
-                    <Title>
-                        4. 카카오톡 프로필 편집 
-                    </Title>
+                    <Title>4. 카카오톡 프로필 편집</Title>
                 </Wrap>
             </Intro>
             <Content>
@@ -39,13 +35,22 @@ function SmartContent4() {
                             <Img src={content5}></Img>
                         </ImgEnd>
                     </Image>
-                    <Subcontent>1. 프로필로 설정되어 있는 이미지를 클릭해 줍니다.</Subcontent>
+                    <Subcontent>
+                        1. 프로필로 설정되어 있는 이미지를 클릭해 줍니다.
+                    </Subcontent>
                     <Subcontent>2. 프로필 편집을 클릭해 줍니다.</Subcontent>
                     <Subcontent>3. 카메라 마크를 클릭해 줍니다.</Subcontent>
-                    <Subcontent>4. 앨범(갤러리)에서 사진 / 동영상 선택을 클릭해 줍니다.</Subcontent>
-                    <Subcontent>5. 원하는 사진을 선택해 주시면 프로필로 자동 변경됩니다.</Subcontent>
+                    <Subcontent>
+                        4. 앨범(갤러리)에서 사진 / 동영상 선택을 클릭해 줍니다.
+                    </Subcontent>
+                    <Subcontent>
+                        5. 원하는 사진을 선택해 주시면 프로필로 자동 변경됩니다.
+                    </Subcontent>
 
-                    <Public>[출처] 카카오톡 프로필 변경하는 방법(초간단)|작성자 마니아</Public>
+                    <Public>
+                        [출처] 카카오톡 프로필 변경하는 방법(초간단)|작성자
+                        마니아
+                    </Public>
                 </Wrap>
             </Content>
         </>
@@ -56,18 +61,19 @@ export default SmartContent4;
 
 const Public = styled.div`
     color: grey;
-
 `;
 
 const Image = styled.div`
-    weight : 300px;
-    background-image : url('/message1.png');
-    background-size : cover;
+    weight: 300px;
+    background-image: url("/message1.png");
+    background-size: cover;
 `;
+
 const Img = styled.img`
     width: 400px;
     margin: 0 10px 0px 0;
 `;
+
 const ImgEnd = styled.div`
     margin: 0px 0px 20px 0;
 `;
@@ -78,8 +84,16 @@ const ImgStart = styled.div`
 
 const Subcontent = styled.p`
     height: 50px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300;
+
+    ${media.tablet`
+        font-size: 1.6rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.4rem;
+    `}
 `;
 
 const Intro = styled.div`
@@ -87,18 +101,18 @@ const Intro = styled.div`
     height: 150px;
     background-size: cover;
     background-position: center center;
+
+    ${media.mobile`
+        margin-top: 70px;
+    `}
 `;
 
 const Content = styled.div`
     width: 100%;
-    height: 800px;
+    height: auto;
+
     ${media.tablet`
         width: 100%;
-        height: 1100px;
-    `}
-    ${media.mobile`
-        width: 100%;
-        height: 1500px; 
     `}
 `;
 
@@ -116,8 +130,20 @@ const Wrap = styled.div`
         align-items: center;
     }
     ${media.tablet`
-        width: 100%;
+        width: 100%; 
         padding: 0 20px;
+
+        ${Content} > & {
+            padding: 0 30px;
+            height: auto;
+        }
+    `}
+
+    ${media.mobile`
+        ${Content} > & {
+            padding: 0 20px;
+            height: auto;
+        }
     `}
 `;
 
@@ -128,9 +154,16 @@ const Title = styled.p`
     font-size: 2.5rem;
     font-weight: 400;
     padding-left: 20px;
-    background-color: #C6EBFF;
-`;
+    background-color: #c6ebff;
 
+    ${media.tablet`
+        font-size: 2.2rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.8rem;
+    `}
+`;
 
 const ContentTitle = styled.p`
     padding-left: 20px;
@@ -160,5 +193,5 @@ const Search = styled.button`
     color: #fff;
     display: inline;
     border: 1px solid black;
-    width:40px;
+    width: 40px;
 `;

@@ -4,8 +4,12 @@ import { useNavigation } from "../../hooks/navigation";
 import { media } from "../../styles/mixin";
 
 function SmartphoneItem({ title }) {
-    const { goToSmartContent1, goToSmartContent2, goToSmartContent3, goToSmartContent4 } =
-        useNavigation();
+    const {
+        goToSmartContent1,
+        goToSmartContent2,
+        goToSmartContent3,
+        goToSmartContent4,
+    } = useNavigation();
 
     const getShortcutDetails = (title) => {
         const details = {
@@ -51,6 +55,7 @@ const Box = styled.div`
     align-items: center;
     width: 100%x;
     height: 50px;
+
     ${media.tablet`
         padding: 0 20px;
     `}
@@ -60,11 +65,15 @@ const Box = styled.div`
     `}
 `;
 
-
 const Title = styled.p`
     margin: 10px 0;
     padding-left: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid black;
     cursor: pointer;
+
+    ${media.tablet`
+        text-align: left;
+        padding-left: 10px;
+    `}
 `;

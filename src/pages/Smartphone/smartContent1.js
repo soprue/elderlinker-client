@@ -2,29 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import { media } from "../../styles/mixin";
 
-import content1 from './image/메시지1.png';
-import content2 from './image/메시지2.png';
-import content3 from './image/메시지3.png';
-import content4 from './image/메시지4.png';
-
+import content1 from "./image/메시지1.png";
+import content2 from "./image/메시지2.png";
+import content3 from "./image/메시지3.png";
+import content4 from "./image/메시지4.png";
 
 function SmartContent1() {
     return (
         <>
             <Intro>
                 <Wrap>
-                    <ContentTitle>
-                        강의
-                    </ContentTitle>
+                    <ContentTitle>강의</ContentTitle>
                     <WrapSearch>
                         <Input></Input>
                         <Search>검색</Search>
                     </WrapSearch>
                     <Bar></Bar>
 
-                    <Title>
-                        1. 카카오톡보내기 
-                    </Title>
+                    <Title>1. 카카오톡보내기</Title>
                 </Wrap>
             </Intro>
             <Content>
@@ -35,8 +30,12 @@ function SmartContent1() {
                         <Img src={content3}></Img>
                         <Img src={content4}></Img>
                     </Image>
-                    <Subcontent>1. 휴대폰 메인화면에서 카카오톡 아이콘 선택</Subcontent>
-                    <Subcontent>2. 사람 그림 선택 후 메세지 보낼 친구 선택</Subcontent>
+                    <Subcontent>
+                        1. 휴대폰 메인화면에서 카카오톡 아이콘 선택
+                    </Subcontent>
+                    <Subcontent>
+                        2. 사람 그림 선택 후 메세지 보낼 친구 선택
+                    </Subcontent>
                     <Subcontent>3. 선택한 대상 1대 1채팅 선택</Subcontent>
                     <Subcontent>4. 메시지 보낼 친구 이름 확인</Subcontent>
                 </Wrap>
@@ -49,21 +48,28 @@ export default SmartContent1;
 
 const Image = styled.div`
     display: inline;
-    weight : 300px;
-    background-image : url('/message1.png');
-    background-size : cover;
-    
+    weight: 300px;
+    background-image: url("/message1.png");
+    background-size: cover;
 `;
+
 const Img = styled.img`
     width: 200px;
     margin: 0 10px px 0;
 `;
 
-
 const Subcontent = styled.p`
     height: 50px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300;
+
+    ${media.tablet`
+        font-size: 1.6rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.4rem;
+    `}
 `;
 
 const Intro = styled.div`
@@ -71,18 +77,18 @@ const Intro = styled.div`
     height: 150px;
     background-size: cover;
     background-position: center center;
+
+    ${media.mobile`
+        margin-top: 70px;
+    `}
 `;
 
 const Content = styled.div`
     width: 100%;
-    height: 660px;
+    height: auto;
+
     ${media.tablet`
         width: 100%;
-        height: 1000px; 
-    `}
-    ${media.mobile`
-        width: 100%;
-        height: 1200px; 
     `}
 `;
 
@@ -101,18 +107,18 @@ const Wrap = styled.div`
     }
     ${media.tablet`
         width: 100%; 
-        text-align: center;
+        padding: 0 20px;
 
         ${Content} > & {
             padding: 0 30px;
-            height: 1000px;
+            height: auto;
         }
     `}
 
     ${media.mobile`
         ${Content} > & {
             padding: 0 20px;
-            height: 1000px;
+            height: auto;
         }
     `}
 `;
@@ -124,9 +130,16 @@ const Title = styled.p`
     font-size: 2.5rem;
     font-weight: 400;
     padding-left: 20px;
-    background-color: #C6EBFF;
-`;
+    background-color: #c6ebff;
 
+    ${media.tablet`
+        font-size: 2.2rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.8rem;
+    `}
+`;
 
 const ContentTitle = styled.p`
     padding-left: 20px;
@@ -156,5 +169,5 @@ const Search = styled.button`
     color: #fff;
     display: inline;
     border: 1px solid black;
-    width:40px;
+    width: 40px;
 `;

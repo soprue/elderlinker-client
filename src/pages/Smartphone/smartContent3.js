@@ -1,27 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../../styles/mixin";
-import content1 from './image/사진1.png';
-import content2 from './image/사진2.png';
-import content3 from './image/사진3.png';
+import content1 from "./image/사진1.png";
+import content2 from "./image/사진2.png";
+import content3 from "./image/사진3.png";
 
 function SmartContent3() {
     return (
         <>
             <Intro>
                 <Wrap>
-                    <ContentTitle>
-                        강의
-                    </ContentTitle>
+                    <ContentTitle>강의</ContentTitle>
                     <WrapSearch>
                         <Input></Input>
                         <Search>검색</Search>
                     </WrapSearch>
                     <Bar></Bar>
 
-                    <Title>
-                        3. 사진보내기
-                    </Title>
+                    <Title>3. 사진보내기</Title>
                 </Wrap>
             </Intro>
             <Content>
@@ -31,9 +27,17 @@ function SmartContent3() {
                         <Img src={content2}></Img>
                         <Img src={content3}></Img>
                     </Image>
-                    <Subcontent>1. 대화방에 들어가 왼쪽 아래 ‘+’버튼을 눌러 다양한 기능 활용</Subcontent>
-                    <Subcontent>2. 사진을 전송할 때는 ‘사진’ 버튼을, 동영상을 전송할 때는 ‘동영상’ 버튼을 눌러 사진이나 영상 전송</Subcontent>
-                    <Subcontent>3. 곧바로 촬영해서 전송하고 싶을 때는 ‘카메라’를 누른다</Subcontent>
+                    <Subcontent>
+                        1. 대화방에 들어가 왼쪽 아래 ‘+’버튼을 눌러 다양한 기능
+                        활용
+                    </Subcontent>
+                    <Subcontent>
+                        2. 사진을 전송할 때는 ‘사진’ 버튼을, 동영상을 전송할
+                        때는 ‘동영상’ 버튼을 눌러 사진이나 영상 전송
+                    </Subcontent>
+                    <Subcontent>
+                        3. 곧바로 촬영해서 전송하고 싶을 때는 ‘카메라’를 누른다
+                    </Subcontent>
                 </Wrap>
             </Content>
         </>
@@ -44,20 +48,28 @@ export default SmartContent3;
 
 const Image = styled.div`
     display: inline;
-    weight : 300px;
-    background-image : url('/message1.png');
-    background-size : cover;
+    weight: 300px;
+    background-image: url("/message1.png");
+    background-size: cover;
 `;
+
 const Img = styled.img`
-    width: 200px;
+    width: 400px;
     margin: 0 10px 30px 0;
 `;
 
-
 const Subcontent = styled.p`
     height: 50px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300;
+
+    ${media.tablet`
+        font-size: 1.6rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.4rem;
+    `}
 `;
 
 const Intro = styled.div`
@@ -65,18 +77,18 @@ const Intro = styled.div`
     height: 150px;
     background-size: cover;
     background-position: center center;
+
+    ${media.mobile`
+        margin-top: 70px;
+    `}
 `;
 
 const Content = styled.div`
     width: 100%;
-    height: 660px;
+    height: auto;
+
     ${media.tablet`
         width: 100%;
-        height: 1000px; 
-    `}
-    ${media.mobile`
-        width: 100%;
-        height: 1200px; 
     `}
 `;
 
@@ -94,8 +106,20 @@ const Wrap = styled.div`
         align-items: center;
     }
     ${media.tablet`
-        width: 100%;
+        width: 100%; 
         padding: 0 20px;
+
+        ${Content} > & {
+            padding: 0 30px;
+            height: auto;
+        }
+    `}
+
+    ${media.mobile`
+        ${Content} > & {
+            padding: 0 20px;
+            height: auto;
+        }
     `}
 `;
 
@@ -106,9 +130,16 @@ const Title = styled.p`
     font-size: 2.5rem;
     font-weight: 400;
     padding-left: 20px;
-    background-color: #C6EBFF;
-`;
+    background-color: #c6ebff;
 
+    ${media.tablet`
+        font-size: 2.2rem;
+    `}
+
+    ${media.mobile`
+        font-size: 1.8rem;
+    `}
+`;
 
 const ContentTitle = styled.p`
     padding-left: 20px;
@@ -138,5 +169,5 @@ const Search = styled.button`
     color: #fff;
     display: inline;
     border: 1px solid black;
-    width:40px;
+    width: 40px;
 `;
