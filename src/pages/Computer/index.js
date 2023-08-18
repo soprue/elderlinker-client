@@ -22,11 +22,9 @@ function Computer() {
             </Intro>
             <Content>
                 <Wrap>
-                    <ContentTitle>강의</ContentTitle>
-                    <WrapSearch>
-                        <Input></Input>
-                        <Search>검색</Search>
-                    </WrapSearch>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <ContentTitle>강의</ContentTitle>
+                    </div>
                     <Bar></Bar>
 
                     <Wrap>
@@ -140,6 +138,7 @@ const ContentTitle = styled.p`
     font-weight: 500;
     cursor: default;
     float: left;
+    padding-bottom: 10px;
 `;
 
 const Bar = styled.div`
@@ -147,26 +146,6 @@ const Bar = styled.div`
     border-bottom: 3px solid black;
 `;
 
-const WrapSearch = styled.div`
-    padding-bottom: 20px;
-    text-align: right;
-`;
-
-const Input = styled.input`
-    border: 1px solid black;
-`;
-
-const Search = styled.button`
-    background-color: black;
-    color: #fff;
-    display: inline;
-    border: 1px solid black;
-    width: 40px;
-
-    ${media.tablet`
-        margin-top: 10px;
-    `}
-`;
 
 const StyledInput = styled.input`
     appearance: none;

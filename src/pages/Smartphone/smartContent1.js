@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { media } from "../../styles/mixin";
+import SmartphoneItme from "./smartphone-item.component";
 
 import content1 from "./image/메시지1.png";
 import content2 from "./image/메시지2.png";
@@ -12,11 +13,9 @@ function SmartContent1() {
         <>
             <Intro>
                 <Wrap>
-                    <ContentTitle>강의</ContentTitle>
-                    <WrapSearch>
-                        <Input></Input>
-                        <Search>검색</Search>
-                    </WrapSearch>
+                    <ContentTitle>
+                        <SmartphoneItme title = "smartphone"/>
+                    </ContentTitle>
                     <Bar></Bar>
 
                     <Title>1. 카카오톡보내기</Title>
@@ -155,19 +154,3 @@ const Bar = styled.div`
     border-bottom: 3px solid black;
 `;
 
-const WrapSearch = styled.div`
-    padding-bottom: 20px;
-    text-align: right;
-`;
-
-const Input = styled.input`
-    border: 1px solid black;
-`;
-
-const Search = styled.button`
-    background-color: black;
-    color: #fff;
-    display: inline;
-    border: 1px solid black;
-    width: 40px;
-`;
