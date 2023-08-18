@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {bannerTextColor, primaryColor} from "../../styles/colors";
-
+import { media } from "../../styles/mixin";
 import SmartphoneItme from "./smartphone-item.component";
 
 function Smartphone() {
@@ -53,7 +53,17 @@ const Intro = styled.div`
     height: 660px;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-smartphone.png");
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+
+    ${media.tablet`
+    height: 600px;
+    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-smartphone.png");
+    `}
+
+    ${media.mobile`
+        height: 300px;
+        margin-top: 50px;
+    `}
 `;
 
 const Content = styled.div`
@@ -77,12 +87,28 @@ const Wrap = styled.div`
         padding-top: 150px;
         align-items: center;
     }
+    ${media.tablet`
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+    `}
 `;
 
 const Title = styled.p`
     font-size: 5.4rem;
     font-weight: 600;
     color: ${bannerTextColor};
+    ${media.tablet`
+        font-size: 5rem;
+        margin-bottom: 10px
+        text-align: center;
+    `}
+
+    ${media.mobile`
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+        text-align: center;
+    `}
 `;
 
 const Description = styled.p`
@@ -90,6 +116,11 @@ const Description = styled.p`
     font-weight: 500;
     color: #40546d;
     margin-bottom: 50px;
+    ${media.mobile`
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        text-align: center;
+    `}
 `;
 
 const ContentTitle = styled.p`
@@ -120,6 +151,9 @@ const Search = styled.button`
     display: inline;
     border: 1px solid black;
     width:40px;
+    ${media.tablet`
+        margin-top: 10px;
+    `}
 `;
 
 const StyledInput = styled.input`
@@ -139,4 +173,9 @@ const StyledInput = styled.input`
     background-repeat: no-repeat;
     background-color: ${primaryColor};
   }
+
+  ${media.tablet`
+        margin-right: 5px;
+        float: left;
+    `}
 `;
