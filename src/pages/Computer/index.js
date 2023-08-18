@@ -68,6 +68,10 @@ const Intro = styled.div`
 const Content = styled.div`
     width: 100%;
     height: 660px;
+
+    ${media.tablet`
+    height: 500px;
+`}
 `;
 
 const Wrap = styled.div`
@@ -86,10 +90,18 @@ const Wrap = styled.div`
         padding-top: 150px;
         align-items: center;
     }
+    ${Content} > &  > & {
+        height: auto;
+    }
+
     ${media.tablet`
         width: 100%;
         padding: 0 20px;
         text-align: center;
+
+        ${Content} > & {
+            padding-top: 80px;
+        }
     `}
 `;
 
