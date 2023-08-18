@@ -6,6 +6,8 @@ function Footer() {
     return (
         <FooterWrap>
             Copyright 2023. elderlinker all rights reserved.
+            <br></br>
+            Desigend by Freepic.
         </FooterWrap>
     );
 }
