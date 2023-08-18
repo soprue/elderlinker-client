@@ -44,7 +44,7 @@ export default Main;
 const Intro = styled.div`
     width: 100%;
     height: 660px;
-    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main.png");
+    background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-origin.png");
     background-size: cover;
     background-position: center center;
 
