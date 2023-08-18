@@ -1,29 +1,28 @@
 import React from "react";
 import styled from "styled-components";
-import {bannerTextColor, primaryColor} from "../../styles/colors";
+import { bannerTextColor, primaryColor } from "../../styles/colors";
 import { media } from "../../styles/mixin";
 
 import ComputerItme from "./computer-item.component";
 
 function Computer() {
-    return (<>
-        <Intro>
-            <Wrap>
-                <Title>
-                    디지털 시대에 적응하기 위한
-                    <br />
-                    기본 지침, 컴퓨터 교육
-                </Title>
-                <Description>
-                    에더링크의 교육을 통해서 컴퓨터의 기본 기능을 알아보아요
-                </Description>
-            </Wrap>
-        </Intro>
-        <Content>
+    return (
+        <>
+            <Intro>
                 <Wrap>
-                    <ContentTitle>
-                        강의
-                    </ContentTitle>
+                    <Title>
+                        디지털 시대에 적응하기 위한
+                        <br />
+                        기본 지침, 컴퓨터 교육
+                    </Title>
+                    <Description>
+                        에더링크의 교육을 통해서 컴퓨터의 기본 기능을 알아보아요
+                    </Description>
+                </Wrap>
+            </Intro>
+            <Content>
+                <Wrap>
+                    <ContentTitle>강의</ContentTitle>
                     <WrapSearch>
                         <Input></Input>
                         <Search>검색</Search>
@@ -32,13 +31,13 @@ function Computer() {
 
                     <Wrap>
                         <StyledInput type="checkbox" />
-                        <ComputerItme title = "computerContent1"/>
+                        <ComputerItme title="computerContent1" />
                         <StyledInput type="checkbox" />
-                        <ComputerItme title = "computerContent2"/>
+                        <ComputerItme title="computerContent2" />
                         <StyledInput type="checkbox" />
-                        <ComputerItme title = "computerContent3"/>
+                        <ComputerItme title="computerContent3" />
                         <StyledInput type="checkbox" />
-                        <ComputerItme title = "computerContent4"/>
+                        <ComputerItme title="computerContent4" />
                     </Wrap>
                 </Wrap>
             </Content>
@@ -150,31 +149,32 @@ const Search = styled.button`
     color: #fff;
     display: inline;
     border: 1px solid black;
-    width:40px;
+    width: 40px;
+
     ${media.tablet`
         margin-top: 10px;
     `}
 `;
 
 const StyledInput = styled.input`
-  appearance: none;
-  float: left;
-  margin-right: 10px;
-  border: 1.5px solid gainsboro;
-  border-radius: 1rem;
-  width: 2rem;
-  height: 2rem;
+    appearance: none;
+    float: left;
+    margin-right: 10px;
+    border: 1.5px solid gainsboro;
+    border-radius: 1rem;
+    width: 2rem;
+    height: 2rem;
 
-  &:checked {
-    border-color: transparent;
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
-    background-size: 100% 100%;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-color: ${primaryColor};
-  }
+    &:checked {
+        border-color: transparent;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+        background-size: 100% 100%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-color: ${primaryColor};
+    }
 
-  ${media.tablet`
+    ${media.tablet`
         margin-right: 5px;
         float: left;
     `}
