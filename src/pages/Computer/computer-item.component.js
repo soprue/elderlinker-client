@@ -5,6 +5,7 @@ import { media } from "../../styles/mixin";
 
 function ComputerphoneItem({ title }) {
     const {
+        goToComputer,
         goToComputerContent1,
         goToComputerContent2,
         goToComputerContent3,
@@ -13,6 +14,10 @@ function ComputerphoneItem({ title }) {
 
     const getShortcutDetails = (title) => {
         const details = {
+            computer: {
+                displayTitle: "강의",
+                target: goToComputer,
+            },
             computerContent1: {
                 displayTitle: "한글이용하기",
                 target: goToComputerContent1,
@@ -70,10 +75,9 @@ const Title = styled.p`
     padding-bottom: 10px;
     border-bottom: 1px solid black;
     cursor: pointer;
-    width: 100%; /* Ensure the title takes up the entire width */
+    width: 100%;
 
-    ${media.tablet`
-        text-align: left;
-        padding-left: 10px;
-    `}
+    ${Box}:first-child > & {
+        border-bottom: none;
+    }
 `;

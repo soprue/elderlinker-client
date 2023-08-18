@@ -22,11 +22,11 @@ function Smartphone() {
             </Intro>
             <Content>
                 <Wrap>
-                    <ContentTitle>강의</ContentTitle>
-                    <WrapSearch>
-                        <Input></Input>
-                        <Search>검색</Search>
-                    </WrapSearch>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <ContentTitle>
+                            강의
+                        </ContentTitle>
+                    </div>
                     <Bar></Bar>
 
                     <Wrap>
@@ -72,7 +72,7 @@ const Content = styled.div`
 
 const Wrap = styled.div`
     width: 1280px;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
 
     ${Intro} > & {
@@ -131,7 +131,7 @@ const Description = styled.p`
 `;
 
 const ContentTitle = styled.p`
-    padding-left: 20px;
+    padding: 0 0 10px 20px;
     font-size: 2rem;
     font-weight: 500;
     cursor: default;
@@ -141,27 +141,6 @@ const ContentTitle = styled.p`
 const Bar = styled.div`
     margin-bottom: 30px;
     border-bottom: 3px solid black;
-`;
-
-const WrapSearch = styled.div`
-    padding-bottom: 20px;
-    text-align: right;
-`;
-
-const Input = styled.input`
-    border: 1px solid black;
-`;
-
-const Search = styled.button`
-    background-color: black;
-    color: #fff;
-    display: inline;
-    border: 1px solid black;
-    width: 40px;
-
-    ${media.tablet`
-        margin-top: 10px;
-    `}
 `;
 
 const StyledInput = styled.input`

@@ -5,6 +5,7 @@ import { media } from "../../styles/mixin";
 
 function SmartphoneItem({ title }) {
     const {
+        goToSmartphone,
         goToSmartContent1,
         goToSmartContent2,
         goToSmartContent3,
@@ -13,6 +14,10 @@ function SmartphoneItem({ title }) {
 
     const getShortcutDetails = (title) => {
         const details = {
+            smartphone: {
+                displayTitle: "강의",
+                target: goToSmartphone,
+            },
             smartContent1: {
                 displayTitle: "카카오톡보내기",
                 target: goToSmartContent1,
@@ -72,8 +77,7 @@ const Title = styled.p`
     border-bottom: 1px solid black;
     cursor: pointer;
 
-    ${media.tablet`
-        text-align: left;
-        padding-left: 10px;
-    `}
+    ${Box}:first-child > & {
+        border-bottom: none;
+    }
 `;
