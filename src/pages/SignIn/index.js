@@ -3,6 +3,8 @@ import { useForm, Controller } from "react-hook-form";
 
 import styled, { keyframes, css } from "styled-components";
 import { textColor, secondaryColor, tertiaryColor } from "../../styles/colors";
+import { media } from "../../styles/mixin";
+
 import { MdEmail } from "react-icons/md";
 import { FaKey } from "react-icons/fa";
 
@@ -74,20 +76,35 @@ export default SignIn;
 
 const SignWrap = styled.div`
     width: 100%;
+    min-height: calc(100vh - 90px - 130px);
+
+    ${media.tablet`
+        min-height: calc(100vh - 80px - 80px);
+    `}
+
+    ${media.mobile`
+        margin-top: 50px;
+        min-height: calc(100vh - 50px - 50px);
+    `}
 `;
 
 const BackTop = styled.div`
     width: 100%;
     height: 120px;
+    background-color: #fff8ed;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/bg-top.png");
     background-size: 100%;
     background-position: center top;
     background-repeat: no-repeat;
+
+    ${media.mobile`
+        height: 80px;
+    `}
 `;
 
 const BackBottom = styled.div`
     width: 100%;
-    min-height: 590px;
+    min-height: calc(100vh - 90px - 130px - 120px);
     background-color: #fff8ed;
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/bg-center.png"),
         url("https://kr.object.ncloudstorage.com/elderlinker/bg-bottom.png");
@@ -95,6 +112,16 @@ const BackBottom = styled.div`
     background-position: center top, center bottom;
     background-repeat: no-repeat;
     padding-bottom: 120px;
+
+    ${media.tablet`
+        min-height: calc(100vh - 80px - 80px - 120px);
+        padding: 0 30px 120px 30px;
+    `}
+
+    ${media.mobile`
+        min-height: calc(100vh - 50px - 50px - 80px);
+        padding: 0 20px 80px 20px;
+    `}
 `;
 
 const SignFormWrap = styled.form`
@@ -104,6 +131,21 @@ const SignFormWrap = styled.form`
     margin: 0 auto;
     background-color: #fff;
     border-radius: 15px;
+
+    ${media.tablet`
+        width: calc(100% - 60px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    `}
+
+    ${media.mobile`
+        width: calc(100% - 40px);
+        padding: 60px 20px;
+        position: unset;
+        transform: unset;
+    `}
 `;
 
 const Title = styled.p`
@@ -111,6 +153,14 @@ const Title = styled.p`
     font-weight: 500;
     color: ${textColor};
     margin-bottom: 20px;
+
+    ${media.tablet`
+        font-size: 3rem;
+    `}
+
+    ${media.mobile`
+        font-size: 2.5rem;
+    `}
 `;
 
 const InputWrap = styled.div`
@@ -121,12 +171,20 @@ const InputWrap = styled.div`
     & + & {
         margin-top: 20px;
     }
+
+    ${media.mobile`
+        width: 100%;
+    `}
 `;
 
 const InputName = styled.p`
     color: ${textColor};
     font-weight: 500;
     margin-bottom: 5px;
+
+    ${media.mobile`
+        font-size: 1.4rem;
+    `}
 `;
 
 const shake = keyframes`
@@ -155,6 +213,11 @@ const InputBox = styled.div`
     animation: ${(props) => (props.$hasError ? shakeAnimation : "none")};
     box-shadow: ${(props) =>
         props.$hasError ? "0 0 10px rgba(255, 115, 92, .2)" : "none"};
+
+    ${media.mobile`
+        height: 50px;
+        padding: 0px 20px;
+    `}
 `;
 
 const Input = styled.input`
@@ -167,6 +230,10 @@ const Input = styled.input`
     &::placeholder {
         color: #ccc;
     }
+
+    ${media.mobile`
+        font-size: 1.3rem;
+    `}
 `;
 
 const SubmitButton = styled.button`
@@ -176,4 +243,10 @@ const SubmitButton = styled.button`
     background-color: ${secondaryColor};
     border-radius: 10px;
     margin-top: 50px;
+
+    ${media.mobile`
+        width: 100%;
+        height: 50px;
+        margin-top: 40px;
+    `}
 `;

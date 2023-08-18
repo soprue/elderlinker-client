@@ -1,8 +1,9 @@
 import React from "react";
+import { useNavigation } from "../../hooks/navigation";
+
 import styled from "styled-components";
 import { secondaryColor, tertiaryColor } from "../../styles/colors";
-
-import { useNavigation } from "../../hooks/navigation";
+import { media } from "../../styles/mixin";
 import ShortcutItem from "./shortcut-item.component";
 
 function Main() {
@@ -46,16 +47,37 @@ const Intro = styled.div`
     background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-origin.png");
     background-size: cover;
     background-position: center center;
+
+    ${media.tablet`
+        height: 600px;
+        background-image: url("https://kr.object.ncloudstorage.com/elderlinker/main-origin.png");
+    `}
+
+    ${media.mobile`
+        height: 300px;
+        margin-top: 50px;
+    `}
 `;
 
 const Shortcut = styled.div`
     width: 100%;
     height: 390px;
     background-color: #fbe4c4;
+
+    ${media.tablet`
+        height: auto;
+        padding: 30px 0 20px 0;
+    `}
+
+    ${media.mobile`
+        height: auto;
+        padding: 20px 0 10px 0;
+    `}
 `;
 
 const Wrap = styled.div`
     display: flex;
+    flex-wrap: wrap;
     width: 1280px;
     height: 100%;
     margin: 0 auto;
@@ -69,13 +91,39 @@ const Wrap = styled.div`
         justify-content: space-between;
         align-items: center;
     }
+
+    ${media.tablet`
+        width: 100%; 
+        text-align: center;
+
+        ${Shortcut} > & {
+            padding: 0 30px;
+        }
+    `}
+
+    ${media.mobile`
+        ${Shortcut} > & {
+            padding: 0 20px;
+        }
+    `}
 `;
 
 const Title = styled.p`
     font-size: 5.4rem;
     font-weight: 600;
     color: ${tertiaryColor};
+
+    ${media.tablet`
+        font-size: 5rem;
+        margin-bottom: 10px
+    `}
+
+    ${media.mobile`
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    `}
 `;
+
 const TitleName = styled.span`
     font-weight: 600;
     color: #cd4f40;
@@ -86,6 +134,12 @@ const Description = styled.p`
     font-weight: 500;
     color: #40546d;
     margin-bottom: 50px;
+    padding: 0 20px;
+
+    ${media.mobile`
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+    `}
 `;
 
 const StartButton = styled.button`
@@ -96,4 +150,15 @@ const StartButton = styled.button`
     background-color: ${secondaryColor};
     border-radius: 10px;
     padding: 10px 25px;
+
+    ${media.tablet`
+        width: 250px;
+        font-size: 2.2rem;
+        margin: 0 auto;
+    `}
+
+    ${media.mobile`
+        width: 160px;
+        font-size: 1.4rem;
+    `}
 `;

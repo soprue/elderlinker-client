@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { media } from "../../styles/mixin";
 
 function Footer() {
     return (
@@ -22,4 +23,15 @@ const FooterWrap = styled.footer`
     background-color: #ededed;
     color: #a3a3a3;
     font-size: 1.4rem;
+
+    ${media.tablet`
+    height: 80px;
+    padding: 0 30px;
+    justify-content: center;
+`}
+
+    ${media.mobile`
+    height: 50px;
+    font-size: 1.2rem;
+`}
 `;
